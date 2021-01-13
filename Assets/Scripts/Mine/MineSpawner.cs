@@ -13,6 +13,7 @@ public class MineSpawner : MonoBehaviour
 
     private void Start()
     {
+        _mineSpawnPlace = transform;
         PlayerInput.OnInputFireBtn += SetMine;
     }
 
@@ -23,6 +24,7 @@ public class MineSpawner : MonoBehaviour
         {
             if (_qtyOfMines > 0) {
                 _qtyOfMines--;
+                //операция не самая лёгкая. Нужно использовать пулл объектов
                 // Создаем _mine в точке _mineSpawnPlace
                 Instantiate(_mine, _mineSpawnPlace.position, _mineSpawnPlace.rotation);
             }
