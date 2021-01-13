@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
 
-    [SerializeField] private string _horizontalAxis = "Horizontal";
-    [SerializeField] private string _verticalAxis = "Vertical";
+    [SerializeField] private string horizontalAxis = "Horizontal";
+    [SerializeField] private string verticalAxis = "Vertical";
+    [SerializeField] private string fireBtn = "Fire1";
 
     private Vector3 _inputAxis;
 
     public static Action<Vector3> OnInput;
     public static Action<Boolean> OnInputSpaceBtn;
+    public static Action<Boolean> OnInputFireBtn;
 
     private void FixedUpdate()
     {
-        float horizontal = Input.GetAxis(_horizontalAxis);
-        float vertical = Input.GetAxis(_verticalAxis);
+        float horizontal = Input.GetAxis(horizontalAxis);
+        float vertical = Input.GetAxis(verticalAxis);
 
         _inputAxis.Set(horizontal, 0f, vertical);
 
@@ -27,6 +29,7 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         OnInputSpaceBtn?.Invoke(Input.GetKeyDown(KeyCode.Space));
+        OnInputFireBtn?.Invoke(Input.GetButtonDown(fireBtn));
     }
 
 }

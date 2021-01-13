@@ -5,22 +5,33 @@ using UnityEngine;
 public class MineSpawner : MonoBehaviour
 {
 
-    [SerializeField] private GameObject _mine; // Наша мина
-    [SerializeField] private Transform _mineSpawnPlace; // точка, где создается мина
+    [SerializeField] private GameObject mine; // Наша мина
+    [SerializeField] private Transform mineSpawnPlace; // точка, где создается мина
+    [SerializeField] private int qtyOfMines = 3;
 
-    private int qtyOfMines = 3;
+    private bool _setMine = false;
+
+    private void Start()
+    {
+        PlayerInput.OnInputFireBtn += SetMine;
+    }
 
     private void Update()
     {
         // Если нажата кнопка  
-        if (Input.GetButtonDown("Fire1"))
+        if (_setMine)
         {
             if (qtyOfMines > 0) {
                 qtyOfMines--;
                 // Создаем _mine в точке _mineSpawnPlace
-                Instantiate(_mine, _mineSpawnPlace.position, _mineSpawnPlace.rotation);
+                Instantiate(mine, mineSpawnPlace.position, mineSpawnPlace.rotation);
             }
         }
+    }
+
+    private void SetMine(bool mine)
+    {
+        _setMine = mine && qtyOfMines > 0;
     }
 
 }
