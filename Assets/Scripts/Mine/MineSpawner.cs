@@ -5,9 +5,9 @@ using UnityEngine;
 public class MineSpawner : MonoBehaviour
 {
 
-    [SerializeField] private GameObject mine; // Наша мина
-    [SerializeField] private Transform mineSpawnPlace; // точка, где создается мина
-    [SerializeField] private int qtyOfMines = 3;
+    [SerializeField] private GameObject _mine; // Наша мина
+    [SerializeField] private Transform _mineSpawnPlace; // точка, где создается мина
+    [SerializeField] private int _qtyOfMines = 3;
 
     private bool _setMine = false;
 
@@ -21,17 +21,17 @@ public class MineSpawner : MonoBehaviour
         // Если нажата кнопка  
         if (_setMine)
         {
-            if (qtyOfMines > 0) {
-                qtyOfMines--;
+            if (_qtyOfMines > 0) {
+                _qtyOfMines--;
                 // Создаем _mine в точке _mineSpawnPlace
-                Instantiate(mine, mineSpawnPlace.position, mineSpawnPlace.rotation);
+                Instantiate(_mine, _mineSpawnPlace.position, _mineSpawnPlace.rotation);
             }
         }
     }
 
     private void SetMine(bool mine)
     {
-        _setMine = mine && qtyOfMines > 0;
+        _setMine = mine && _qtyOfMines > 0;
     }
 
 }
