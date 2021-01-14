@@ -6,7 +6,7 @@ using UnityEngine;
 public class MyCharPhisicsController : MonoBehaviour
 {
     [SerializeField] private float _moveSpeedMultiplyer = 15.0f;
-    [SerializeField] private float _jumpForce = 2500f;
+    [SerializeField] private float _jumpForce = 18000f;
     [SerializeField] private float _jumpStateStartsPos = 0.3f;
     
     private Rigidbody _body;
