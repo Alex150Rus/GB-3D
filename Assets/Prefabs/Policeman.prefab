@@ -30,6 +30,22 @@ CapsuleCollider:
   m_Height: 1.7475953
   m_Direction: 1
   m_Center: {x: 0, y: 0.7684331, z: 0.023410559}
+--- !u!114 &2752136002329716436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434538759526633115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9dc787174ac249afeb9b146fd6d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _navMeshAgent: {fileID: 5804917706744687258}
+  _waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!195 &5804917706744687258
 NavMeshAgent:
   m_ObjectHideFlags: 0
