@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
     public static Action<Boolean> OnInputSpaceBtn;
     public static Action<Boolean> OnInputFireBtn;
 
-    private void FixedUpdate()
+    private void Update()
     {
         float horizontal = Input.GetAxis(_horizontalAxis);
         float vertical = Input.GetAxis(_verticalAxis);
@@ -24,10 +24,6 @@ public class PlayerInput : MonoBehaviour
 
         //всем ктл подписался на событие OnInput отдали _inputAxis
         OnInput?.Invoke(_inputAxis);
-    }
-
-    private void Update()
-    {
         OnInputSpaceBtn?.Invoke(Input.GetKeyDown(KeyCode.Space));
         OnInputFireBtn?.Invoke(Input.GetButtonDown(_fireBtn));
     }
