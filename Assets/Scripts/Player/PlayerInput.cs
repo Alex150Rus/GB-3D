@@ -7,13 +7,15 @@ public class PlayerInput : MonoBehaviour
 
     [SerializeField] private string _horizontalAxis = "Horizontal";
     [SerializeField] private string _verticalAxis = "Vertical";
-    [SerializeField] private string _fireBtn = "Fire1";
+    [SerializeField] private string _fireBtn1 = "Fire1";
+    [SerializeField] private string _fireBtn2 = "Fire2";
 
     private Vector3 _inputAxis;
 
     public static Action<Vector3> OnInput;
     public static Action<Boolean> OnInputSpaceBtn;
     public static Action<Boolean> OnInputFireBtn;
+    public static Action<Boolean> OnInputFireBtn2;
 
     private void Update()
     {
@@ -25,7 +27,8 @@ public class PlayerInput : MonoBehaviour
         //всем ктл подписался на событие OnInput отдали _inputAxis
         OnInput?.Invoke(_inputAxis);
         OnInputSpaceBtn?.Invoke(Input.GetKeyDown(KeyCode.Space));
-        OnInputFireBtn?.Invoke(Input.GetButtonDown(_fireBtn));
+        OnInputFireBtn?.Invoke(Input.GetButtonDown(_fireBtn1));
+        OnInputFireBtn2?.Invoke(Input.GetButtonDown(_fireBtn2));
     }
 
 }
