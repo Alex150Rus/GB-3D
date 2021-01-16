@@ -12664,7 +12664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalAxis: Horizontal
   _verticalAxis: Vertical
-  _fireBtn: Fire1
+  _fireBtn1: Fire1
+  _fireBtn2: Fire2
 --- !u!4 &989910410
 Transform:
   m_ObjectHideFlags: 0
@@ -12686,7 +12687,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 989910408}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9569900f8ccb55f4bb9a1b0654df7344, type: 3}
   m_Name: 
@@ -17551,7 +17552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396459527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.96, y: 1.91, z: 0}
+  m_LocalPosition: {x: -13.96, y: 1.58, z: -2.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25748,11 +25749,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4642476870221435668, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 5431243994555110648, guid: 424d795f607492d43a6f94981dbb3109,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25807,36 +25803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813436645565126039, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: _moveSpeedMultyplier
-      value: 1050
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813436645565126039, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: _jumpForce
-      value: 18000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5813436645565126039, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: _moveSpeedMultiplyer
-      value: 135
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753119834418727761, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: m_Mass
-      value: 85
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753119834418727761, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: m_Drag
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8753119834418727761, guid: 424d795f607492d43a6f94981dbb3109,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 424d795f607492d43a6f94981dbb3109, type: 3}
