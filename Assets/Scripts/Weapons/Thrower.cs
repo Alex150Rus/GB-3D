@@ -5,8 +5,8 @@ using UnityEngine;
 public class Thrower : MonoBehaviour
 {
     [SerializeField] GameObject _prefab;
+    [SerializeField] Inventory _inventory;
     [SerializeField] int _throwForce = 200;
-    [SerializeField] int _qtyOfAmmo = 10;
 
 
     void Start()
@@ -16,11 +16,11 @@ public class Thrower : MonoBehaviour
 
     private void ThrowBall(bool throwBall)
     {
-        if(throwBall && _qtyOfAmmo > 0)
+        if(throwBall && _inventory.BallsAmmoQty > 0)
         {
             GameObject ball = Instantiate(_prefab, transform.position, Quaternion.identity);       
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * _throwForce);
-            _qtyOfAmmo--;
+            _inventory.BallsAmmoQty--;
         }
     }
 }
