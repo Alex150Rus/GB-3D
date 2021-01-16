@@ -8,6 +8,8 @@ public class MyCharPhisicsController : MonoBehaviour
     [SerializeField] private float _moveSpeedMultiplyer =135.0f;
     [SerializeField] private float _jumpForce = 18000f;
     [SerializeField] private float _jumpStateStartsPos = 0.3f;
+    [SerializeField] private string _ballAmmoTag = "BallAmmo";
+    [SerializeField] private Inventory _inventory;
     
     private Rigidbody _body;
     private Vector3 _moveDirection;
@@ -47,5 +49,16 @@ public class MyCharPhisicsController : MonoBehaviour
     private void Jump(bool jump)
     {
         if (jump && _state == State.Idle) _body.AddForce(Vector3.up * _jumpForce);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        GameObject collisionObject = collision.gameObject;
+        if (collisionObject.CompareTag(_ballAmmoTag))
+        {
+            Destroy(collisionObject);
+            _inventory.BallsAmmoQty++;
+            
+        } 
     }
 }

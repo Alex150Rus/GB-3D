@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 5152036559591692575, guid: 8fbb5b43de249b94c8e8672512075927, type: 3}
   _inventory: {fileID: 4478794050381180312}
-  _throwForce: 75
+  _throwForce: 200
 --- !u!54 &8753119834418727761
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,9 +73,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.3227483
-  m_Height: 1.7475953
+  m_Height: 1.6500466
   m_Direction: 1
-  m_Center: {x: 0, y: 0.7684331, z: 0.023410559}
+  m_Center: {x: 0, y: 0.81720746, z: 0.023410559}
 --- !u!114 &3769425829395024841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,7 +90,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mine: {fileID: 8501315650941958961, guid: 97f934c347fdb984a87ac4919100c8ae, type: 3}
   _mineSpawnPlace: {fileID: 5431243994555110648}
-  _qtyOfMines: 3
+  _inventory: {fileID: 4478794050381180312}
+--- !u!114 &4478794050381180312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642476870221435668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6df2f2fef5457746b1ccf42e593d165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ballsAmmoQty: 10
+  _minesQty: 3
 --- !u!114 &5813436645565126039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,20 +120,8 @@ MonoBehaviour:
   _moveSpeedMultiplyer: 135
   _jumpForce: 18000
   _jumpStateStartsPos: 0.3
---- !u!114 &4478794050381180312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4642476870221435668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6df2f2fef5457746b1ccf42e593d165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ballsAmmoQty: 10
-  _minesQty: 3
+  _ballAmmoTag: BallAmmo
+  _inventory: {fileID: 4478794050381180312}
 --- !u!1001 &3851030633476708666
 PrefabInstance:
   m_ObjectHideFlags: 0
