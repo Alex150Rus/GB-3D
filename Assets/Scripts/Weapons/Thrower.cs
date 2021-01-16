@@ -16,7 +16,7 @@ public class Thrower : MonoBehaviour
 
     private void ThrowBall(bool throwBall)
     {
-        if(throwBall && _inventory.BallsAmmoQty > 0)
+        if(gameObject.activeSelf && throwBall && _inventory.BallsAmmoQty > 0)
         {
             GameObject ball = Instantiate(_prefab, transform.position, Quaternion.identity);       
             ball.GetComponent<Rigidbody>().AddForce(transform.forward * _throwForce);

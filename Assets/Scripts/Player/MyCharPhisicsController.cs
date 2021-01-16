@@ -5,12 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MyCharPhisicsController : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeedMultiplyer =135.0f;
+    [SerializeField] private float _moveSpeedMultiplyer = 135.0f;
     [SerializeField] private float _jumpForce = 18000f;
     [SerializeField] private float _jumpStateStartsPos = 0.3f;
     [SerializeField] private string _ballAmmoTag = "BallAmmo";
     [SerializeField] private Inventory _inventory;
-    
+
     private Rigidbody _body;
     private Vector3 _moveDirection;
 
@@ -25,6 +25,7 @@ public class MyCharPhisicsController : MonoBehaviour
     private void Start()
     {
         _body = GetComponent<Rigidbody>();
+        
         PlayerInput.OnInput += Move;
         PlayerInput.OnInputSpaceBtn += Jump;
     }
@@ -35,6 +36,7 @@ public class MyCharPhisicsController : MonoBehaviour
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, _moveDirection, 5f * Time.deltaTime, 0f);
         transform.rotation = Quaternion.LookRotation(desiredForward);
 
+        //переключение состояний прыжка
         if (transform.position.y > _jumpStateStartsPos) _state = State.Jump;
         else _state = State.Idle;
     }
