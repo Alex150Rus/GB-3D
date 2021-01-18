@@ -5,19 +5,30 @@ using UnityEngine;
 public class Pistol : MonoBehaviour
 
 {
-    [SerializeField] GameObject _prefab;
-    [SerializeField] Inventory _inventory;
-    [SerializeField] int _shootPower = 200;
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Inventory _inventory;
+    [SerializeField] private int _shootPower = 200;
+    [SerializeField] private float _shootingDistance = 100;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerInput.OnInputFireBtn2 += Fire;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Fire(bool fire)
     {
-        
+        if (gameObject.activeSelf && fire && _inventory.PistolAmmoQty > 0)
+        {
+            RaycastHit hit;
+
+            //Нужен для физики, для обработки наших попаданий
+            if(Physics.Raycast(transform.position, transform.forward, out hit, _shootingDistance))
+            {
+                Instantiate(_prefab, hit.point, Quaternion.identity);
+                Debug.Log("fire");
+            }
+            
+
+        }
     }
 }

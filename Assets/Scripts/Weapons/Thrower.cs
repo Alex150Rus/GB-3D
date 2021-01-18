@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Thrower : MonoBehaviour
 {
-    [SerializeField] GameObject _prefab;
-    [SerializeField] Inventory _inventory;
-    [SerializeField] int _throwForce = 200;
+    [SerializeField] private GameObject _prefab;
+    [SerializeField] private Inventory _inventory;
+    [SerializeField] private int _throwForce = 2000;
 
 
     void Start()

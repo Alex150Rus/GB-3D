@@ -5,11 +5,12 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private int _ballsAmmoQty;
     [SerializeField] private int _minesQty;
+    [SerializeField] private int _PistolAmmoQty;
     [SerializeField] private GameObject[] _weapons;
 
     private GameObject _weapon;
 
-    private void Update()
+    private void Start()
     {
         _weapon = _weapons[0];
         DeActivateOtherWeapons(0, _weapons);
@@ -27,6 +28,12 @@ public class Inventory : MonoBehaviour
     {
         get { return _minesQty; }
         set { _minesQty = value; }
+    }
+
+    public int PistolAmmoQty
+    {
+        get { return _PistolAmmoQty; }
+        set { _PistolAmmoQty = value; }
     }
 
     private void nextWeapon(bool weaponChange)
