@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [SerializeField] private int _damage;
+    [SerializeField] private int _damage = 100;
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.tag);
         if (other.gameObject.CompareTag("Enemy"))
         {
-            var enemy = other.GetComponent<MyEnemy>();
-            enemy.Hurt(_damage);
+            Health enemy = other.GetComponent<Health>();
+            enemy.TakeDamage(_damage);
             Destroy(gameObject);
         }
     }

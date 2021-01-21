@@ -46,6 +46,19 @@ MonoBehaviour:
   _waypoints:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &4569154063708533824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3434538759526633115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26dae4885cf7064f9ab865c3a873be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
 --- !u!195 &5804917706744687258
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -134,6 +147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Policeman
+      objectReference: {fileID: 0}
+    - target: {fileID: 3374164278233798146, guid: f518fb7f3e6ce7f47985911de1366469,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f518fb7f3e6ce7f47985911de1366469, type: 3}
