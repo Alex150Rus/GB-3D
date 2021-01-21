@@ -6,7 +6,7 @@ public class Thrower : MonoBehaviour
 {
     [SerializeField] private GameObject _prefab;
     [SerializeField] private Inventory _inventory;
-    [SerializeField] private int _throwForce = 2000;
+    [SerializeField] private int _throwForce = 200;
 
 
     void Start()
