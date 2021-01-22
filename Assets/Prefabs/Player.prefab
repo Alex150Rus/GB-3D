@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc93a59c166291c4e9c6bb3981248520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 5152036559591692575, guid: 8fbb5b43de249b94c8e8672512075927, type: 3}
+  _prefab: {fileID: 4225817666344444015, guid: f09ed2f6bc90ac54faa71dc8ad965a5f, type: 3}
   _inventory: {fileID: 4478794050381180312}
   _throwForce: 200
 --- !u!54 &8753119834418727761
@@ -156,6 +156,19 @@ MonoBehaviour:
   _weapons:
   - {fileID: 1729882117413965265}
   - {fileID: 712424153671648895}
+--- !u!114 &5161586787047414526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642476870221435668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26dae4885cf7064f9ab865c3a873be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
 --- !u!114 &5813436645565126039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,19 +186,6 @@ MonoBehaviour:
   _jumpStateStartsPos: 0.3
   _ballAmmoTag: BallAmmo
   _inventory: {fileID: 4478794050381180312}
---- !u!114 &5161586787047414526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4642476870221435668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26dae4885cf7064f9ab865c3a873be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!1001 &3851030633476708666
 PrefabInstance:
   m_ObjectHideFlags: 0

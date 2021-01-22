@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 587736052237849567}
   - component: {fileID: 1287040621445226967}
   - component: {fileID: 906208758837735683}
-  m_Layer: 2
+  - component: {fileID: 144746561790478815}
+  m_Layer: 0
   m_Name: TurrelBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,11 +103,24 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816502670651536717}
   serializedVersion: 2
-  m_Mass: 0.2
+  m_Mass: 0.1
   m_Drag: 1
   m_AngularDrag: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &144746561790478815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2816502670651536717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78de78247d076a4b930ed06b7471ada, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10

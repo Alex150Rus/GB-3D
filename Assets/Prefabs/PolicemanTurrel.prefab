@@ -30,6 +30,48 @@ CapsuleCollider:
   m_Height: 1.693655
   m_Direction: 1
   m_Center: {x: 0, y: 0.79540324, z: 0.023410559}
+--- !u!114 &3109669241531033507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453942375028412843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e1b7ff6d10f4b4cb3357ef882138c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
+  _enemyDistance: 23
+  onTargetIsVisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7098874817948770885}
+        m_MethodName: StartFiring
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTargetIsInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7098874817948770885}
+        m_MethodName: StartFiring
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3443625100058776584
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,7 +82,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1678277478759947319}
   - component: {fileID: 7098874817948770885}
-  - component: {fileID: 713277116873657280}
   m_Layer: 0
   m_Name: Turrel
   m_TagString: Untagged
@@ -56,7 +97,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3443625100058776584}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.92, z: 0.46}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2971500716397598279}
@@ -75,26 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2816502670651536717, guid: 785eaa7601b9ef44994780a1f1938df0, type: 3}
-  _enemy: {fileID: 5431243994555110648, guid: 424d795f607492d43a6f94981dbb3109, type: 3}
+  _enemy: {fileID: 0}
   _throwForce: 50
-  _distance: 23
   _fireIntervalInSeconds: 1
---- !u!54 &713277116873657280
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3443625100058776584}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &926992885124482985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,17 +129,17 @@ PrefabInstance:
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.5125937
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.5490181e-17
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 6.377361
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
