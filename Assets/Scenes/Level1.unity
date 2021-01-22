@@ -10883,6 +10883,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
         type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
       propertyPath: _enemy
       value: 
       objectReference: {fileID: 1942425824}
@@ -10890,6 +10900,61 @@ PrefabInstance:
         type: 3}
       propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1587170836}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ChaseEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsVisible.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1587170836}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: StopChase
+      objectReference: {fileID: 0}
+    - target: {fileID: 3109669241531033507, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+        type: 3}
+      propertyPath: onTargetIsInvisible.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7098874817948770885, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
         type: 3}
@@ -15134,6 +15199,109 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1161302075}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1167352914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3434538759526633115, guid: 39401819cb1b17e4082b624f94722752,
+    type: 3}
+  m_PrefabInstance: {fileID: 5843332308163563292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1167352917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2752136002329716436, guid: 39401819cb1b17e4082b624f94722752,
+    type: 3}
+  m_PrefabInstance: {fileID: 5843332308163563292}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167352914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9f9dc787174ac249afeb9b146fd6d7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1167352921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167352914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3e1b7ff6d10f4b4cb3357ef882138c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 1942425824}
+  _enemyDistance: 23
+  onTargetIsVisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1167352922}
+        m_MethodName: ChaseEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTargetIsInvisible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1167352922}
+        m_MethodName: StopChase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1167352922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167352914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1dc120ed0edd649b503bb865035242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 1942425824}
+  _chaseStopsAfterSeconds: 1
+  _state: 0
+  _StartChase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1167352917}
+        m_MethodName: StopPatrol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _StopChase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1167352917}
+        m_MethodName: StartPatrol
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1168852182
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19298,6 +19466,55 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1575230972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1587170831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2453942375028412843, guid: 67d5f8df5c50c4242ad4e8513786a8c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 871842629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1587170836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587170831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1dc120ed0edd649b503bb865035242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 1942425824}
+  _chaseStopsAfterSeconds: 1
+  _state: 0
+  _StartChase:
+    m_PersistentCalls:
+      m_Calls: []
+  _StopChase:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!195 &1587170837
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587170831}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1001 &1591618439
 PrefabInstance:
   m_ObjectHideFlags: 0

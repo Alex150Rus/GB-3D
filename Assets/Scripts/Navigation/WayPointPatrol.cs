@@ -14,15 +14,29 @@ public class WayPointPatrol : MonoBehaviour
     void Start()
     {
         _navMeshAgent.SetDestination(_waypoints[0].position);
+        StartCoroutine(Patrol());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator Patrol()
     {
-        if (_navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance)
-        {
-            _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
-            _navMeshAgent.SetDestination(_waypoints[_currentWaypointIndex].position);
+        while (true) { 
+            if (_navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance)
+            {
+                _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;
+                _navMeshAgent.SetDestination(_waypoints[_currentWaypointIndex].position);
+            } 
+            yield return null;
         }
+    }
+
+    public void StartPatrol()
+    {
+        _navMeshAgent.SetDestination(_waypoints[_currentWaypointIndex].position);
+        StartCoroutine(Patrol());
+    }
+
+    public void StopPatrol()
+    {
+        StopCoroutine(Patrol());
     }
 }
