@@ -9,9 +9,11 @@ public class TurrelBall : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player")) collision.gameObject.GetComponent<Health>().TakeDamage(_damage);
-
-        Debug.Log(collision.gameObject);
         Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        Destroy(gameObject, 2);
+    }
 }
