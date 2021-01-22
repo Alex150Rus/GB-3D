@@ -53,6 +53,7 @@ public class Enemy : MonoBehaviour
             if (_state == State.SeeEnemyFirstTime || _state == State.SeeingEnemy)
             {
                 _state = State.StopSeeingEnemy;
+                //таким образом отправим событие единожды
                 onTargetIsInvisible?.Invoke();
             }
             else if (_state == State.StopSeeingEnemy) _state = State.DontSeeEnemy;
