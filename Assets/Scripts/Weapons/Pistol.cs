@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pistol : MonoBehaviour
 
@@ -9,6 +10,7 @@ public class Pistol : MonoBehaviour
     [SerializeField] private Inventory _inventory;
     [SerializeField] private int _shootPower = 200;
     [SerializeField] private float _shootingDistance = 100;
+    [SerializeField] private UnityEvent _firing;
 
     void Start()
     {
@@ -24,6 +26,7 @@ public class Pistol : MonoBehaviour
             //Нужен для физики, для обработки наших попаданий
             if(Physics.Raycast(transform.position, transform.forward, out hit, _shootingDistance))
             {
+                _firing?.Invoke();
                 Instantiate(_prefab, hit.point, Quaternion.identity);
                 Debug.Log("fire");
             }
