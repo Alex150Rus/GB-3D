@@ -30,6 +30,72 @@ CapsuleCollider:
   m_Height: 1.693655
   m_Direction: 1
   m_Center: {x: 0, y: 0.79540324, z: 0.023410559}
+--- !u!95 &4465690386902819829
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453942375028412843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: fdfb5e1c4a1b339489c0eddebb1ab872, type: 3}
+  m_Controller: {fileID: 9100000, guid: 4febb86802f3c494eb353d23d5c865ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1587170836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453942375028412843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a1dc120ed0edd649b503bb865035242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
+  _chaseStopsAfterSeconds: 1
+  _chaseSpeed: 2.5
+  _state: 0
+  _StartChase:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3109669241531033507}
+        m_MethodName: SetWalkOrRunState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _StopChase:
+    m_PersistentCalls:
+      m_Calls: []
+  _ChaseCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3109669241531033507}
+        m_MethodName: SetIdleState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3109669241531033507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,7 +122,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1587170836}
+        m_MethodName: ChaseEnemy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   onTargetIsInvisible:
     m_PersistentCalls:
@@ -72,6 +149,40 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1587170836}
+        m_MethodName: StopChase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _navMeshAgent: {fileID: 5381291881610618448}
+--- !u!195 &5381291881610618448
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453942375028412843}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &3443625100058776584
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,8 +228,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2816502670651536717, guid: 785eaa7601b9ef44994780a1f1938df0, type: 3}
   _enemy: {fileID: 0}
-  _throwForce: 50
-  _fireIntervalInSeconds: 1
+  _throwForce: 7
+  _fireIntervalInSeconds: 0.3
+  _firing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3109669241531033507}
+        m_MethodName: SetFiringState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &926992885124482985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5490181e-17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
@@ -144,22 +269,22 @@ PrefabInstance:
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.9624552
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.27144054
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
@@ -174,7 +299,7 @@ PrefabInstance:
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 148.5
       objectReference: {fileID: 0}
     - target: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
         type: 3}

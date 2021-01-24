@@ -47,6 +47,9 @@ MonoBehaviour:
   _inventory: {fileID: 4478794050381180312}
   _shootPower: 200
   _shootingDistance: 100
+  _firing:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1729882117413965265
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729882117413965265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.64, y: 0.55, z: 0.44}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5431243994555110648}
@@ -93,6 +96,20 @@ MonoBehaviour:
   _prefab: {fileID: 4225817666344444015, guid: f09ed2f6bc90ac54faa71dc8ad965a5f, type: 3}
   _inventory: {fileID: 4478794050381180312}
   _throwForce: 200
+  _firing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5813436645565126039}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &8753119834418727761
 Rigidbody:
   m_ObjectHideFlags: 0
