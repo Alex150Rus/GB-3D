@@ -28,10 +28,8 @@ public class Pistol : MonoBehaviour
             {
                 _firing?.Invoke();
                 Instantiate(_prefab, hit.point, Quaternion.identity);
-                Debug.Log("fire");
+                _inventory.PistolAmmoQty--;
             }
-            
-
         }
     }
 }

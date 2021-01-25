@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - BallAmmo
+  - Obstackle
+  - FirstAid
+  - KeyCard
   layers:
   - Default
   - TransparentFX

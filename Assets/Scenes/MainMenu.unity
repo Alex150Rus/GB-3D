@@ -930,7 +930,6 @@ GameObject:
   m_Component:
   - component: {fileID: 874423447}
   - component: {fileID: 874423446}
-  - component: {fileID: 874423445}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Untagged
@@ -938,14 +937,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &874423445
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874423444}
-  m_Enabled: 1
 --- !u!20 &874423446
 Camera:
   m_ObjectHideFlags: 0
@@ -1719,7 +1710,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1433543110}
   - component: {fileID: 1433543109}
-  - component: {fileID: 1433543108}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -1727,14 +1717,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1433543108
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433543107}
-  m_Enabled: 1
 --- !u!20 &1433543109
 Camera:
   m_ObjectHideFlags: 0

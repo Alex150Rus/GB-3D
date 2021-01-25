@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _moveSpeedMultiplyer = 135.0f;
     [SerializeField] private float _jumpForce = 18000f;
     [SerializeField] private float _jumpStateStartsPos = 0.3f;
-    [SerializeField] private string _ballAmmoTag = "BallAmmo";
+
     [SerializeField] private Inventory _inventory;
 
     private Rigidbody _body;
@@ -75,12 +75,27 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject collisionObject = collision.gameObject;
-        if (collisionObject.CompareTag(_ballAmmoTag))
+
+        if (collisionObject.CompareTag(_inventory.BallAmmoTag))
         {
             Destroy(collisionObject);
             _inventory.BallsAmmoQty++;
             
         } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(_inventory.FirstAidTag))
+        {
+            Destroy(other.gameObject);
+            _inventory.FirstAidQty++;
+        }
+        else if (other.CompareTag(_inventory.KeyCardTag))
+        {
+            Destroy(other.gameObject);
+            _inventory.KeyCardsQty++;
+        }
     }
 
     private void Animate()
