@@ -17,6 +17,7 @@ public class PlayerInput : MonoBehaviour
     public static Action<Boolean> OnInputFireBtn;
     public static Action<Boolean> OnInputFireBtn2;
     public static Action<Boolean> OnInputQ;
+    public static Action<Boolean, Vector3> OnInputMMB;
 
     private void FixedUpdate()
     {
@@ -36,6 +37,7 @@ public class PlayerInput : MonoBehaviour
         OnInputFireBtn?.Invoke(Input.GetButtonDown(_fireBtn2));
         OnInputFireBtn2?.Invoke(Input.GetButtonDown(_fireBtn1));
         OnInputQ?.Invoke(Input.GetKeyDown(KeyCode.Q));
-    }
+        OnInputMMB?.Invoke(Input.GetMouseButton(2), new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0));
+}
 
 }
