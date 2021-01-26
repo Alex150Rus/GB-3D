@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4245940755280810242}
   - component: {fileID: 4245940755280810241}
   - component: {fileID: 4245940755280810243}
+  - component: {fileID: 7225502287552346451}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   _verticalAxis: Vertical
   _fireBtn1: Fire1
   _fireBtn2: Fire2
+  _cancel: Cancel
 --- !u!114 &4245940755280810243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,3 +68,43 @@ MonoBehaviour:
   _fieldSize: {x: 0, y: 0, z: 0}
   _delayInSeconds: 2
   _qtyOfBalls: 10
+--- !u!114 &7225502287552346451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245940755280810240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa102d497fbade4f92574e7b4ee0140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _GameIsPaused:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4245940755280810241}
+        m_MethodName: TakingInput
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _GameIsResumed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4245940755280810241}
+        m_MethodName: TakingInput
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
