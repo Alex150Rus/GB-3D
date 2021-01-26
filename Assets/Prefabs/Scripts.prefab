@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4245940755280810241}
   - component: {fileID: 4245940755280810243}
   - component: {fileID: 7225502287552346451}
+  - component: {fileID: 349689096}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -94,6 +95,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 349689096}
+        m_MethodName: EnableOptionsCanvas
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   _GameIsResumed:
     m_PersistentCalls:
       m_Calls:
@@ -107,4 +119,43 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 349689096}
+        m_MethodName: EnableOptionsCanvas
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &349689096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4245940755280810240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64adbd598ec806f4ea043c74bdcf7423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _optionsCanvas: {fileID: 0}
+  _settingsCanvas: {fileID: 0}
+  _ResumeGame:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7225502287552346451}
+        m_MethodName: ResumeGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2

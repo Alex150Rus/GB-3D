@@ -23,14 +23,16 @@ public class GameController : MonoBehaviour
             _GameIsPaused?.Invoke();
         } else if(input)
         {
-            _gamePaused = false;
+            
             ResumeGame();
-            _GameIsResumed?.Invoke();
+            
         }
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
+        _gamePaused = false;
         Time.timeScale = 1;
+        _GameIsResumed?.Invoke();
     }
 }
