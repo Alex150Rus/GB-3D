@@ -109,6 +109,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case State.Run:
                 _animator.SetFloat(_speed, _moveSpeedMultiplyer);
+                
                 break;
             case State.Firing:
                 _animator.SetTrigger(_fire);
@@ -117,5 +118,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    
 
 }
