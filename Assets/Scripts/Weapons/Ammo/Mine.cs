@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Mine : MonoBehaviour
 {
-    [SerializeField] private int _damage = 10;
+    [SerializeField] private int _damage = 50;
 
     private void OnTriggerEnter(Collider other)
     {
