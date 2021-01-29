@@ -7,8 +7,8 @@ using Player;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float _moveSpeedMultiplyer = 135.0f;
-    [SerializeField] private float _jumpForce = 18000f;
+    [SerializeField] private float _moveSpeedMultiplyer = 9.0f;
+    [SerializeField] private float _jumpForce = 180f;
     [SerializeField] private float _jumpStateStartsPos = 0.3f;
 
     [SerializeField] private Inventory _inventory;
@@ -49,9 +49,10 @@ public class PlayerController : MonoBehaviour
         if (input.magnitude > 0)
         {
             _state = State.Run;
-            _moveDirection.Set(input.x * _moveSpeedMultiplyer, 0f, input.z * _moveSpeedMultiplyer);
-            //двигаем
-            _body.AddForce(_moveDirection);
+            _moveDirection.Set(input.x, 0f, input.z);
+            _moveDirection.Normalize();
+;            //двигаем
+            _body.AddForce(_moveDirection * _moveSpeedMultiplyer);
         } else
         {
             _state = State.Idle;
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
     private void Jump(bool jump)
     {
         if (jump && transform.position.y < _jumpStateStartsPos) {
-            _body.AddForce(Vector3.up * _jumpForce);
+            _body.AddRelativeForce(Vector3.up * _jumpForce);
             //переключение состояний прыжка
             _state = State.Jump;
         } 
