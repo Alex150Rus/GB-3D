@@ -95,7 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 4225817666344444015, guid: f09ed2f6bc90ac54faa71dc8ad965a5f, type: 3}
   _inventory: {fileID: 4478794050381180312}
-  _throwForce: 200
+  _throwForce: 800
   _firing:
     m_PersistentCalls:
       m_Calls:
@@ -152,9 +152,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 72b5e1688293a10418f00e553f379bfe, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.111
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -250,6 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f8e9472d2d6ed468778c2e6dd184b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataSounds:
+  - name: steps
+    audioClip: {fileID: 8300000, guid: 72b5e1688293a10418f00e553f379bfe, type: 3}
 --- !u!1 &4461556497024526447
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,6 +313,20 @@ CapsuleCollider:
   m_Height: 1.6500466
   m_Direction: 1
   m_Center: {x: 0, y: 0.81720746, z: 0.023410559}
+--- !u!114 &3259911435036623920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642476870221435668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0fc11d4a67c7b479fe1ded48bf7bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playsound: {fileID: 4553058270366215290}
+  stepsSoundName: steps
 --- !u!114 &3769425829395024841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,20 +392,6 @@ MonoBehaviour:
   _jumpForce: 180
   _jumpStateStartsPos: 0.3
   _inventory: {fileID: 4478794050381180312}
-  playsound: {fileID: 0}
---- !u!114 &3259911435036623920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4642476870221435668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0fc11d4a67c7b479fe1ded48bf7bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playsound: {fileID: 4553058270366215290}
 --- !u!1001 &3851030633476708666
 PrefabInstance:
   m_ObjectHideFlags: 0

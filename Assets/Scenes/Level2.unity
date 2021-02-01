@@ -317,7 +317,7 @@ PrefabInstance:
     - target: {fileID: 3865765306551667990, guid: 7e313dd250f0480409a1b85afe2bca70,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 67.29
       objectReference: {fileID: 0}
     - target: {fileID: 3865765306551667990, guid: 7e313dd250f0480409a1b85afe2bca70,
         type: 3}
@@ -6606,6 +6606,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StoppingDistance
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8599200526225700388, guid: 39401819cb1b17e4082b624f94722752,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39401819cb1b17e4082b624f94722752, type: 3}

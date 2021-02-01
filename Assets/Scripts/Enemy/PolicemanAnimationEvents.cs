@@ -5,6 +5,7 @@ using UnityEngine;
 public class PolicemanAnimationEvents : MonoBehaviour
 {
     public PlaySound playsound;
+    public string stepsSoundName;
 
 
     // Start is called before the first frame update
@@ -15,6 +16,6 @@ public class PolicemanAnimationEvents : MonoBehaviour
 
     private void OnGround()
     {
-        playsound.Play();
+        playsound.Play(stepsSoundName);
     }
 }

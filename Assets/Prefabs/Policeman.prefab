@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playsound: {fileID: 5690548581604048949}
+  stepsSoundName: steps
 --- !u!1 &1104455578329364575
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,9 +284,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7ac2f05b18cb7304c87334b21c05024b, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.528
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -294,7 +295,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -329,7 +330,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -381,6 +382,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f8e9472d2d6ed468778c2e6dd184b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataSounds:
+  - name: steps
+    audioClip: {fileID: 8300000, guid: 7ac2f05b18cb7304c87334b21c05024b, type: 3}
 --- !u!1 &1535747216441157581
 GameObject:
   m_ObjectHideFlags: 0

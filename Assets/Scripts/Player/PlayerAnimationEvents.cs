@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerAnimationEvents : MonoBehaviour
 {
 
-    public PlaySound playsound;
-
+    private PlaySound playsound;
+    public string stepsSoundName;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,6 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void OnGround()
     {
-        playsound.Play();
+        playsound.Play(stepsSoundName);
     }
 }
