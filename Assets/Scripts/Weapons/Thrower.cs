@@ -26,4 +26,9 @@ public class Thrower : MonoBehaviour
             _inventory.BallsAmmoQty--;
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputFireBtn2 -= ThrowBall;
+    }
 }

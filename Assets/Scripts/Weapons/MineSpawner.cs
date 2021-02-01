@@ -36,4 +36,9 @@ public class MineSpawner : MonoBehaviour
         _setMine = mine && _inventory.MinesQty > 0;
     }
 
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputFireBtn -= SetMine;
+    }
+
 }

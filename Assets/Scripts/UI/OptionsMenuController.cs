@@ -48,5 +48,4 @@ public class OptionsMenuController : MonoBehaviour
         Utility.SetCanvasGroupEnabled(_optionsCanvas, true);
     }
 
-
 }

@@ -23,9 +23,7 @@ public class GameController : MonoBehaviour
             _GameIsPaused?.Invoke();
         } else if(input)
         {
-            
-            ResumeGame();
-            
+            ResumeGame();   
         }
     }
 
@@ -34,5 +32,10 @@ public class GameController : MonoBehaviour
         _gamePaused = false;
         Time.timeScale = 1;
         _GameIsResumed?.Invoke();
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputEscape -= PauseGame;
     }
 }

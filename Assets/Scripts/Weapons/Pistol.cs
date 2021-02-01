@@ -32,4 +32,9 @@ public class Pistol : MonoBehaviour
             }
         }
     }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputFireBtn2 -= Fire;
+    }
 }

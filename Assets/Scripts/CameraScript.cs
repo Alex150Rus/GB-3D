@@ -11,7 +11,7 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerInput.OnInputMMB = RotateCamera;
+        PlayerInput.OnInputMMB += RotateCamera;
     }
 
     // Update is called once per frame
@@ -27,5 +27,10 @@ public class CameraScript : MonoBehaviour
         {
 
         }						
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputMMB -= RotateCamera;
     }
 }

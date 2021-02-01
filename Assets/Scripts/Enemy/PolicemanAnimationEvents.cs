@@ -13,12 +13,6 @@ public class PolicemanAnimationEvents : MonoBehaviour
         playsound = GetComponentInChildren<PlaySound>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnGround()
     {
         playsound.Play();

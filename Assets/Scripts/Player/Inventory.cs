@@ -75,4 +75,9 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < _weapons.Length; i++) if (i != currentWeaponIndex) _weapons[i].SetActive(false);            
     }
+
+    private void OnDestroy()
+    {
+        PlayerInput.OnInputQ -= nextWeapon;
+    }
 }

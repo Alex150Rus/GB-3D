@@ -119,6 +119,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
-
+    private void OnDestroy()
+    {
+        PlayerInput.OnInput -= Move;
+        PlayerInput.OnInputSpaceBtn -= Jump;
+    }
 }
