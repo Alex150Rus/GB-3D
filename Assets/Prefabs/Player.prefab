@@ -151,7 +151,8 @@ AudioSource:
   m_GameObject: {fileID: 4270794588123686383}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7703068957718661324, guid: ddab5f0a4a07531449474027036599f0,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.111
@@ -325,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0fc11d4a67c7b479fe1ded48bf7bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playsound: {fileID: 4553058270366215290}
   stepsSoundName: steps
 --- !u!114 &3769425829395024841
 MonoBehaviour:
