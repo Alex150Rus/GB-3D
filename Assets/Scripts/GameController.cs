@@ -12,12 +12,13 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         PlayerInput.OnInputEscape += PauseGame;
     }
 
     private void PauseGame(bool input)
     {
-        if (input && !_gamePaused) { 
+        if (input && !_gamePaused) {
             Time.timeScale = 0;
             _gamePaused = true;
             _GameIsPaused?.Invoke();
