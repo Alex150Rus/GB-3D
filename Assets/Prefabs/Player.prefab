@@ -388,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c94901cea6c0474ca7dc00072ece3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeedMultiplyer: 15
+  _moveSpeedMultiplyer: 6.1
   _jumpForce: 180
   _jumpStateStartsPos: 0.3
   _inventory: {fileID: 4478794050381180312}

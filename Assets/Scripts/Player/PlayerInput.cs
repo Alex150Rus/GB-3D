@@ -22,8 +22,9 @@ public class PlayerInput : MonoBehaviour
     public static Action<Boolean> OnInputEscape;
     public static Action<Boolean, Vector3> OnInputMMB;
 
-    private void FixedUpdate()
+    private void Update()
     {
+
         float horizontal = Input.GetAxis(_horizontalAxis);
         float vertical = Input.GetAxis(_verticalAxis);
 
@@ -31,11 +32,7 @@ public class PlayerInput : MonoBehaviour
 
         //всем ктл подписался на событие OnInput отдали _inputAxis
         OnInput?.Invoke(_inputAxis);
-       
-    }
 
-    private void Update()
-    {
         if (_takingInput)
         {
             OnInputSpaceBtn?.Invoke(Input.GetKeyDown(KeyCode.Space));
