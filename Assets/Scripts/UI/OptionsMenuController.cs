@@ -24,6 +24,12 @@ public class OptionsMenuController : MonoBehaviour
         _ResumeGame?.Invoke();
     }
 
+    public void RestartLevel()
+    {
+        Utility.SetCanvasGroupEnabled(_optionsCanvas, false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public void Settings()
     {
         Utility.SetCanvasGroupEnabled(_optionsCanvas, false);
