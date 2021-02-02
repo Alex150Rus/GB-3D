@@ -1434,8 +1434,9 @@ GameObject:
   m_Component:
   - component: {fileID: 505644621}
   - component: {fileID: 505644622}
+  - component: {fileID: 505644623}
   m_Layer: 0
-  m_Name: MusicSlider (1)
+  m_Name: FXSlider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1513,6 +1514,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &505644623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505644620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d54ef83cd05e242ac787df7e829d90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 505644622}
+  audioMixer: {fileID: 24100000, guid: ddab5f0a4a07531449474027036599f0, type: 2}
+  GroupParamName: SoundsVolume
 --- !u!1 &568940198
 GameObject:
   m_ObjectHideFlags: 0

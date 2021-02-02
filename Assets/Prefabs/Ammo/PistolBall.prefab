@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 1556884644074063613}
   - component: {fileID: 896031774820660469}
   - component: {fileID: 1234167262249133089}
+  - component: {fileID: 1255729041799690851}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: PistolBall
   m_TagString: BallAmmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,3 +111,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &1255729041799690851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4225817666344444015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38db695bd9a21164ba6c219178a56322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10

@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7197314b4b0644343afa662ff92a08fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 4225817666344444015, guid: 5f490745be1ab9d44b6df1583a067031, type: 3}
   _inventory: {fileID: 4478794050381180312}
   _shootPower: 200
   _shootingDistance: 100
