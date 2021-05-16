@@ -20,7 +20,11 @@ public class BallSpawner : MonoBehaviour
         while(_qtyOfBalls > 0)
         {
             //операция не самая лёгкая. Нужно использовать пулл объектов
-            Instantiate(_ballPrefab, _parent.position, Quaternion.identity, _parent);
+            GameObject ball = Instantiate(_ballPrefab, _parent.position, Quaternion.identity, _parent);
+            Vector3 force = _parent.forward * 50f;
+
+            ball.GetComponent<Rigidbody>().AddForce(force);
+                        
             _qtyOfBalls--;
             yield return new WaitForSeconds(_delayInSeconds);
         }
