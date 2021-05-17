@@ -4,6 +4,6 @@ namespace SpaceJailRunner.Controller.Interface
 {
     internal interface IExecute
     {
-        void Execute();
+        void Execute(float deltaTime);
     }
 }

@@ -1,6 +1,6 @@
 namespace SpaceJailRunner.Controller.Interface
 {
-    internal interface IInitInterface
+    internal interface IInit
     {
         void Init();
     }

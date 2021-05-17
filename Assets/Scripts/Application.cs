@@ -1,28 +1,34 @@
 using System;
+using SpaceJailRunner.Controller;
+using SpaceJailRunner.Controller.Interface;
 using UnityEngine;
 
 namespace SpaceJailRunner
 {
     internal class Application : MonoBehaviour
     {
+        private Controllers _controllers;
         private void Start()
         {
-            throw new NotImplementedException();
+            _controllers = new Controllers();
+            _controllers.Init();
         }
 
         private void Update()
         {
-            throw new NotImplementedException();
+            var deltaTime = Time.deltaTime;
+            _controllers.Execute(deltaTime);
         }
 
         private void FixedUpdate()
         {
-            throw new NotImplementedException();
+            var deltaTime = Time.fixedDeltaTime;
+            _controllers.Execute(deltaTime);
         }
 
         private void OnDestroy()
         {
-            throw new NotImplementedException();
+            _controllers.CleanUp();
         }
     }
 }
