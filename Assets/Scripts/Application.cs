@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace DefaultNamespace
+namespace SpaceJailRunner
 {
-    public class Application : MonoBehaviour
+    internal class Application : MonoBehaviour
     {
         private void Start()
         {
