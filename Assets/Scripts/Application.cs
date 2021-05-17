@@ -7,6 +7,8 @@ namespace SpaceJailRunner
 {
     internal class Application : MonoBehaviour
     {
+        [ SerializeField ]
+        private Data.Data _data;
         private Controllers _controllers;
         private void Start()
         {
