@@ -1,4 +1,6 @@
 using SpaceJailRunner.Controller.Interface;
+using SpaceJailRunner.Controller.MainMenu;
+using SpaceJailRunner.MainMenu;
 using UnityEngine;
 
 namespace SpaceJailRunner.Controller
@@ -19,7 +21,15 @@ namespace SpaceJailRunner.Controller
 
         private void InitilizeGame()
         {
+            MainMenuFactory mainMenueFactory = new MainMenuFactory();
+            MainMenuInit mainMenuInit = new MainMenuInit(mainMenueFactory);
+
+            StartButton startButtonController = new StartButton(mainMenuInit.GetMainMenuView());
+            StartButtonClicked startButtonClicked = new StartButtonClicked(startButtonController);
             
+            _controller.Add(mainMenuInit);
+            _controller.Add(startButtonController);
+            _controller.Add(startButtonClicked);
         }
     }
 }

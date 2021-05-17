@@ -1,6 +1,6 @@
 namespace SpaceJailRunner.Controller.Interface
 {
-    public interface IFixedExecute
+    internal interface IFixedExecute : IController
     {
         void FixedExecute(float deltaTime);
     }

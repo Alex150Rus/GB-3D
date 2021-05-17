@@ -1,6 +1,6 @@
 namespace SpaceJailRunner.Controller.Interface
 {
-    internal interface ICleanUp
+    internal interface ICleanUp : IController
     {
         void CleanUp();
     }
