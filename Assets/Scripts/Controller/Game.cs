@@ -1,16 +1,19 @@
 using SpaceJailRunner.Controller.Interface;
+using UnityEngine;
 
 namespace SpaceJailRunner.Controller
 {
     internal class Game
     {
-        private IController _controller;
+        private Controllers _controller;
         private Data.Data _idata;
+        private Camera _camera;
         
-        public Game(IController controller, Data.Data data)
+        public Game(Controllers controller, Data.Data data)
         {
             _controller = controller;
             _idata = data;
+            _camera = Camera.main;
             InitilizeGame();
         }
 

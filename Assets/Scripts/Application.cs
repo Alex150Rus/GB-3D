@@ -13,6 +13,7 @@ namespace SpaceJailRunner
         private void Start()
         {
             _controllers = new Controllers();
+            new Game(_controllers, _data);
             _controllers.Init();
         }
 
