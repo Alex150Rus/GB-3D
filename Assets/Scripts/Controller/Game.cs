@@ -24,12 +24,16 @@ namespace SpaceJailRunner.Controller
             MainMenuFactory mainMenueFactory = new MainMenuFactory();
             MainMenuInit mainMenuInit = new MainMenuInit(mainMenueFactory);
 
-            StartButton startButtonController = new StartButton(mainMenuInit.GetMainMenuView());
-            StartButtonClicked startButtonClicked = new StartButtonClicked(startButtonController);
-            
+            MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit.GetMainMenuView());
+            MainMenuButtonsClicked mainMenuButtonsClicked = 
+                new MainMenuButtonsClicked(mainMenuButtonsController, 
+                    new MenuButtonsActions(new CanvasGroupSwitcher(mainMenuInit.GetMainMenuView())));
+
             _controller.Add(mainMenuInit);
-            _controller.Add(startButtonController);
-            _controller.Add(startButtonClicked);
+            
+            _controller.Add(mainMenuButtonsController);
+            _controller.Add(mainMenuButtonsClicked);
+            
         }
     }
 }
