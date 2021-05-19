@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace SpaceJailRunner.Player
 {
     public enum State
     {

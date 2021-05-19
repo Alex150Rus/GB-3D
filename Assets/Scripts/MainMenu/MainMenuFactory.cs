@@ -1,5 +1,5 @@
 using SpaceJailRunner.MainMenu.Interface;
-using SpaceJailRunner.Prefabs;
+using SpaceJailRunner.Prefabs_my;
 using UnityEngine;
 
 namespace SpaceJailRunner.MainMenu

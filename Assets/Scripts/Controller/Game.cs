@@ -24,16 +24,21 @@ namespace SpaceJailRunner.Controller
 
         private void InitilizeGame()
         {
+            
             LevelFactory levelFactory = new LevelFactory();
             LevelSwitcher levelSwitcher = new LevelSwitcher(levelFactory);
-           
+
+            #region MainMenu
             
             MainMenuFactory mainMenueFactory = new MainMenuFactory();
             MainMenuInit mainMenuInit = new MainMenuInit(mainMenueFactory);
-            
+
+            #region SceneLoader
+
             SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit);
 
-            
+            #endregion
+
             MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit.GetMainMenuView());
             CanvasGroupSwitcher canvasGroupSwitcher = new CanvasGroupSwitcher(mainMenuInit.GetMainMenuView());
             MainMenuButtonsClicked mainMenuButtonsClicked = 
@@ -44,7 +49,13 @@ namespace SpaceJailRunner.Controller
             
             _controller.Add(mainMenuButtonsController);
             _controller.Add(mainMenuButtonsClicked);
+            #endregion
+
+            #region SceneLoader
+
             _controller.Add(sceneLoader);
+
+            #endregion
 
         }
     }
