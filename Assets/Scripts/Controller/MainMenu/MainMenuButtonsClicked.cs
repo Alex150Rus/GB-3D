@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal class MainMenuButtonsClicked: ICleanUp
+    internal sealed class MainMenuButtonsClicked: ICleanUp
     {
-        private IOnClick _mainMenuButtonsController;
-        private IButtonAction _buttonActions;
+        private readonly IOnClick _mainMenuButtonsController;
+        private readonly IButtonAction _buttonActions;
         
         public  MainMenuButtonsClicked(IOnClick mainMenuButtonsController, IButtonAction buttonActions)
         {

@@ -3,7 +3,7 @@ using SpaceJailRunner.Controller.Interface;
 
 namespace SpaceJailRunner.Controller
 {
-    public class Controllers: IInit, IExecute, IFixedExecute, ICleanUp
+    public sealed class Controllers: IInit, IExecute, IFixedExecute, ICleanUp
     {
         private readonly List<IInit> _initializeControllers;
         private readonly List<IExecute> _executeControllers;

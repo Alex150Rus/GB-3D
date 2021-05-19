@@ -1,18 +1,21 @@
 using System;
 using SpaceJailRunner.Controller.MainMenu.Interface;
+using SpaceJailRunner.Controller.Scene;
 using SpaceJailRunner.MainMenu;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal class MenuButtonsActions : IButtonAction
+    internal sealed class MenuButtonsActions : IButtonAction
     {
-        private CanvasGroupSwitcher _canvasGroupSwitcher;
+        private readonly CanvasGroupSwitcher _canvasGroupSwitcher;
+        private readonly SceneLoader _sceneLoader;
 
-        public MenuButtonsActions(CanvasGroupSwitcher canvasGroupSwitcher)
+        public MenuButtonsActions(CanvasGroupSwitcher canvasGroupSwitcher, SceneLoader sceneLoader)
         {
             _canvasGroupSwitcher = canvasGroupSwitcher;
+            _sceneLoader = sceneLoader;
         }
         
         public void ButtonAction(Button btn)
@@ -41,13 +44,13 @@ namespace SpaceJailRunner.Controller.MainMenu
                     ExitBtnAction();
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException("missing button name or wrong name");
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
         private void StartBtnAction()
         {
-            Debug.Log("ss");
+            _sceneLoader.LoadScene(1);
         }
 
         private void LevelBtnAction()
@@ -57,7 +60,7 @@ namespace SpaceJailRunner.Controller.MainMenu
 
         private void LevelChoosingBtnAction(int levelNumber)
         {
-            throw new NotImplementedException();
+            _sceneLoader.LoadScene(levelNumber);
         }
 
         private void MainMenuBtnAction()

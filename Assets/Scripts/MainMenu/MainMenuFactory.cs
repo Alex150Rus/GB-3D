@@ -1,13 +1,14 @@
 using SpaceJailRunner.MainMenu.Interface;
+using SpaceJailRunner.Prefabs;
 using UnityEngine;
 
 namespace SpaceJailRunner.MainMenu
 {
-    internal class MainMenuFactory : IMainMenuFactory
+    internal sealed class MainMenuFactory : IMainMenuFactory
     {
         public Transform Create()
         {
-            var prefab = Resources.Load<GameObject>("Prefabs/Levels/MainMenuBlocks");
+            var prefab = Resources.Load<GameObject>($"{PrefabsRoutesManager.LEVELS}MainMenuBlocks");
             var instance = Object.Instantiate(prefab);
             return instance.transform;
         }

@@ -7,9 +7,9 @@ using UnityEngine.UI;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal class MainMenuButtons: IInit, ICleanUp, IOnClick
+    internal sealed class MainMenuButtons: IInit, ICleanUp, IOnClick
     {
-        private Button[] _btn;
+        private readonly Button[] _btn;
         public event Action<Button> OnClick;
 
         public MainMenuButtons(Transform mainMenuView)

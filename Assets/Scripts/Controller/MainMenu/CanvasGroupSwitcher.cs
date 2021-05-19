@@ -5,12 +5,12 @@ using Screen = SpaceJailRunner.Controller.MainMenu.Screen;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal class CanvasGroupSwitcher : ISetScreen
+    internal sealed class CanvasGroupSwitcher : ISetScreen
 
     {
-    private CanvasGroup _mainMenu;
-    private CanvasGroup _settings;
-    private CanvasGroup _levels;
+    private readonly CanvasGroup _mainMenu;
+    private readonly CanvasGroup _settings;
+    private readonly CanvasGroup _levels;
 
     public CanvasGroupSwitcher(Transform menuInit)
     {
