@@ -23,7 +23,6 @@ namespace SpaceJailRunner.Controller.Level
             
             Object.Destroy(_loadedLevel);
             return _loadedLevel = _levelFactory.CreateLevel(levelName);
-
         }
     }
 }
