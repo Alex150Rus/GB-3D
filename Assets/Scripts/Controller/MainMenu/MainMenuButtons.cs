@@ -22,8 +22,6 @@ namespace SpaceJailRunner.Controller.MainMenu
                 .GetComponentsInChildren<Button>();
 
             _btn = btnMainMenu.Union(btnSettingsMenu).Union(btnLevelsMenu).ToArray();
-
-
         }
 
         private void InformListeners(Button btn)

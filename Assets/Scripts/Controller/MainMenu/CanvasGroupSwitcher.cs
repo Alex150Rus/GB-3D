@@ -17,6 +17,7 @@ namespace SpaceJailRunner.Controller.MainMenu
         _mainMenu = menuInit.GetChild(0).GetChild(0).GetComponent<CanvasGroup>();
         _settings = menuInit.GetChild(1).GetChild(0).GetComponent<CanvasGroup>();
         _levels = menuInit.GetChild(2).GetChild(0).GetComponent<CanvasGroup>();
+        SetCurrentScreen(Screen.Main);
 
     }
 

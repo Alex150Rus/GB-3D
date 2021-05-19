@@ -20,21 +20,59 @@ namespace SpaceJailRunner.Controller.MainMenu
             switch (btn.name)
             {
                 case MainMenuNamesManager.START_BUTTON_NAME:
-                    Debug.Log("ss");
+                    StartBtnAction();
                     break;
                 case MainMenuNamesManager.LEVELMENU_BUTTON_NAME:
-                    _canvasGroupSwitcher.SetCurrentScreen(Screen.Levels);
+                    LevelBtnAction();
                     break;
                 case MainMenuNamesManager.LEVEL_1:
-                    throw new NotImplementedException();
+                    LevelChoosingBtnAction(1);
                     break;
                 case MainMenuNamesManager.LEVEL_2:
-                    throw new NotImplementedException();
+                    LevelChoosingBtnAction(2);
                     break;
                 case MainMenuNamesManager.MAIN_MENU:
-                    _canvasGroupSwitcher.SetCurrentScreen(Screen.Main);
+                    MainMenuBtnAction();
                     break;
+                case MainMenuNamesManager.SETTINGS:
+                    SettingsBtnAction();
+                    break;
+                case MainMenuNamesManager.EXIT:
+                    ExitBtnAction();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException("missing button name or wrong name");
             }
+        }
+
+        private void StartBtnAction()
+        {
+            Debug.Log("ss");
+        }
+
+        private void LevelBtnAction()
+        {
+            _canvasGroupSwitcher.SetCurrentScreen(Screen.Levels);
+        }
+
+        private void LevelChoosingBtnAction(int levelNumber)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void MainMenuBtnAction()
+        {
+            _canvasGroupSwitcher.SetCurrentScreen(Screen.Main);   
+        }
+
+        private void SettingsBtnAction()
+        {
+            _canvasGroupSwitcher.SetCurrentScreen(Screen.Settings);
+        }
+
+        private void ExitBtnAction()
+        {
+            throw new NotImplementedException();
         }
     }
 }
