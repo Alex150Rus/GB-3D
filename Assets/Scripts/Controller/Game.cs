@@ -1,9 +1,11 @@
 using SpaceJailRunner.Controller.Interface;
 using SpaceJailRunner.Controller.Level;
 using SpaceJailRunner.Controller.MainMenu;
+using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Controller.Scene;
 using SpaceJailRunner.Level;
 using SpaceJailRunner.MainMenu;
+using SpaceJailRunner.Player;
 using UnityEngine;
 
 namespace SpaceJailRunner.Controller
@@ -28,6 +30,15 @@ namespace SpaceJailRunner.Controller
             LevelFactory levelFactory = new LevelFactory();
             LevelSwitcher levelSwitcher = new LevelSwitcher(levelFactory);
 
+            #region Player
+
+            PlayerFactory playerFactory = new PlayerFactory();
+            PlayerInit playerInit = new PlayerInit(playerFactory);
+
+            _controller.Add(playerInit);
+
+            #endregion
+
             #region MainMenu
             
             MainMenuFactory mainMenueFactory = new MainMenuFactory();
@@ -35,8 +46,8 @@ namespace SpaceJailRunner.Controller
 
             #region SceneLoader
 
-            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit);
-
+            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit, playerInit.GetPlayer());
+            _controller.Add(sceneLoader);
             #endregion
 
             MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit.GetMainMenuView());
@@ -49,12 +60,6 @@ namespace SpaceJailRunner.Controller
             
             _controller.Add(mainMenuButtonsController);
             _controller.Add(mainMenuButtonsClicked);
-            #endregion
-
-            #region SceneLoader
-
-            _controller.Add(sceneLoader);
-
             #endregion
 
         }

@@ -6,12 +6,14 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Scene
 {
-    internal class SceneLoader: ISceneLoad, IInit
+    internal sealed class SceneLoader: ISceneLoad, IInit
     {
-        private LevelSwitcher _levelSwitcher;
-        private MainMenuInit _mainMenuInit;
+        private readonly LevelSwitcher _levelSwitcher;
+        private readonly MainMenuInit _mainMenuInit;
+        private readonly Transform _player;
         
-        public SceneLoader(LevelSwitcher levelSwitcher, MainMenuInit mainMenuInit)
+        
+        public SceneLoader(LevelSwitcher levelSwitcher, MainMenuInit mainMenuInit, Transform player)
         {
             _levelSwitcher = levelSwitcher;
             _mainMenuInit = mainMenuInit;

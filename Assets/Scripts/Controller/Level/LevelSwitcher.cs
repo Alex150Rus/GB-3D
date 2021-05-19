@@ -16,17 +16,14 @@ namespace SpaceJailRunner.Controller.Level
         public Transform GetLevel(string levelName)
         {
             if (!_loadedLevel)
-            {
                 return _loadedLevel = _levelFactory.CreateLevel(levelName);
-            }
 
-            if (_loadedLevel.name == levelName)
+            if (_loadedLevel.name == $"{levelName}(Clone)")
                 return _loadedLevel;
-            else
-            {
-                Object.Destroy(_loadedLevel);
-                return _loadedLevel = _levelFactory.CreateLevel(levelName);
-            }
+            
+            Object.Destroy(_loadedLevel);
+            return _loadedLevel = _levelFactory.CreateLevel(levelName);
+
         }
     }
 }
