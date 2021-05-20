@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Player.Interface
 {
-    internal interface IGetPlayer
+    internal interface IGetStartPlayer
     {
-        public Transform GetPlayer();
+        public Transform GetPlayer(PlayerData playerData, int sceneNumber);
     }
 }

@@ -13,13 +13,13 @@ namespace SpaceJailRunner.Controller
     internal sealed class Game
     {
         private readonly Controllers _controller;
-        private readonly Data.Data _idata;
+        private readonly Data.Data _data;
         private readonly Camera _camera;
         
         public Game(Controllers controller, Data.Data data)
         {
             _controller = controller;
-            _idata = data;
+            _data = data;
             _camera = Camera.main;
             InitilizeGame();
         }
@@ -35,8 +35,6 @@ namespace SpaceJailRunner.Controller
             PlayerFactory playerFactory = new PlayerFactory();
             PlayerInit playerInit = new PlayerInit(playerFactory);
 
-            _controller.Add(playerInit);
-
             #endregion
 
             #region MainMenu
@@ -46,7 +44,7 @@ namespace SpaceJailRunner.Controller
 
             #region SceneLoader
 
-            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit, playerInit.GetPlayer());
+            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit, playerInit, _data);
             _controller.Add(sceneLoader);
             #endregion
 

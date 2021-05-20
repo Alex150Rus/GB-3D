@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Player
 {
-    public enum State
+    public enum PlayerState
     {
         Idle,
         Run,

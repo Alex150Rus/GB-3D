@@ -1,6 +1,8 @@
 using SpaceJailRunner.Controller.Interface;
 using SpaceJailRunner.Controller.Level;
 using SpaceJailRunner.Controller.MainMenu;
+using SpaceJailRunner.Controller.Player;
+using SpaceJailRunner.Data;
 using SpaceJailRunner.Level;
 using UnityEngine;
 
@@ -10,13 +12,17 @@ namespace SpaceJailRunner.Controller.Scene
     {
         private readonly LevelSwitcher _levelSwitcher;
         private readonly MainMenuInit _mainMenuInit;
-        private readonly Transform _player;
+        private readonly PlayerInit _playerInit;
+        private readonly Data.Data _data;
+        private Transform _player;
         
         
-        public SceneLoader(LevelSwitcher levelSwitcher, MainMenuInit mainMenuInit, Transform player)
+        public SceneLoader(LevelSwitcher levelSwitcher, MainMenuInit mainMenuInit, PlayerInit playerInit, Data.Data data)
         {
             _levelSwitcher = levelSwitcher;
             _mainMenuInit = mainMenuInit;
+            _playerInit = playerInit;
+            _data = data;
         }
         
         public void LoadScene(int sceneNumber)
@@ -24,17 +30,24 @@ namespace SpaceJailRunner.Controller.Scene
             switch (sceneNumber)
             {
                 case 0:
+                    if(_player)
+                        Object.Destroy(_player);
                     _mainMenuInit.CreateMenu();
                     break;
                 case 1:
-                    _mainMenuInit.DestroyMenu();
-                    _levelSwitcher.GetLevel(LevelNamesManager.LEVEL1_PREFAB_NAME);   
+                    LoadStandardScene(_data.Player, sceneNumber, LevelNamesManager.LEVEL1_PREFAB_NAME);
                     break;
                 case 2:
-                    _mainMenuInit.DestroyMenu();
-                    _levelSwitcher.GetLevel(LevelNamesManager.LEVEL2_PREFAB_NAME);
+                    LoadStandardScene(_data.Player, sceneNumber, LevelNamesManager.LEVEL2_PREFAB_NAME);
                     break;
             }    
+        }
+
+        private void LoadStandardScene(PlayerData playerData, int sceneNumber, string levelPrefabName)
+        {
+            _mainMenuInit.DestroyMenu();
+            _player = _playerInit.GetPlayer(playerData, sceneNumber);
+            _levelSwitcher.GetLevel(levelPrefabName);   
         }
 
         public void Init()
