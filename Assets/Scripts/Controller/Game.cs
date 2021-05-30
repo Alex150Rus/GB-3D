@@ -29,7 +29,7 @@ namespace SpaceJailRunner.Controller
             
             if (SceneManager.GetActiveScene().name == _data.SceneNames.GameSceneNames[0])
             {
-                   
+                   Debug.Log("MainMenu");
             }
             else
             {
