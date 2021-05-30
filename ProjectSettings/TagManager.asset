@@ -9,6 +9,7 @@ TagManager:
   - Obstackle
   - FirstAid
   - KeyCard
+  - PlayerStartingPoint
   layers:
   - Default
   - TransparentFX
