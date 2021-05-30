@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ffcb19881e746cd92af3b06e6ab07f6, type: 3}
   m_Name: CameraData
   m_EditorClassIdentifier: 
-  _offset: {x: 0, y: 6.5, z: -5.8}
+  _offset: {x: 0, y: 8.87, z: -6.6}
   _rotation: {x: 0, y: 0, z: 0}

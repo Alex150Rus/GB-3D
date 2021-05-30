@@ -10,6 +10,8 @@ TagManager:
   - FirstAid
   - KeyCard
   - PlayerStartingPoint
+  - EnemyType1StartingPoint
+  - EnemyType2StartingPoint
   layers:
   - Default
   - TransparentFX

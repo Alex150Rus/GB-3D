@@ -16,20 +16,10 @@ namespace SpaceJailRunner.Controller.Player
 
 
         public Transform GetPlayer(PlayerData playerData, int sceneNumber)
-        {   
-            if(!_player.gameObject.activeSelf)
-                _player.gameObject.SetActive(true);
-            
-            SetPlayerPosition(playerData, sceneNumber);
+        {
             return _player;
         }
 
-        private void SetPlayerPosition(PlayerData playerData, int sceneNumber)
-        {
-            _player.position = playerData.StartPositions[sceneNumber-1];
-            _player.rotation = Quaternion.Euler(Vector3.up * playerData.StartRotations[sceneNumber-1]);
-        }
-        
         public Transform GetPlayer()
         {
             return _player;
