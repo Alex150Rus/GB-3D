@@ -1,6 +1,7 @@
 using SpaceJailRunner.Controller.Cameras;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Player;
+using SpaceJailRunner.Enemy;
 using SpaceJailRunner.MainMenu;
 using SpaceJailRunner.Player;
 using UnityEngine;
@@ -47,6 +48,13 @@ namespace SpaceJailRunner.Controller
                 PlayerInit playerInit = new PlayerInit(playerFactory);
                 PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer(),
                     _data.Camera);
+
+                var abstractEnemyFactory = new AbstractEnemyFactory();
+                
+                abstractEnemyFactory.Create(EnemyType.Patrolling);
+                abstractEnemyFactory.Create(EnemyType.Static);
+                
+                
                 _controller.Add(playerFollowingCamera);
             }
 
