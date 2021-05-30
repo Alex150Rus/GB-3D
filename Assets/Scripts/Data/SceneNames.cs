@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SpaceJailRunner.Scene
+namespace SpaceJailRunner.Data
 {
     [CreateAssetMenu(fileName = "SceneNames", menuName = "Data/SceneNames", order = 0)]
     internal class SceneNames : ScriptableObject

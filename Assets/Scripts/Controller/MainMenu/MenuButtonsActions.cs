@@ -1,7 +1,7 @@
 using System;
 using SpaceJailRunner.Controller.MainMenu.Interface;
 using SpaceJailRunner.MainMenu;
-using SpaceJailRunner.Scene;
+using SpaceJailRunner.Data;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 

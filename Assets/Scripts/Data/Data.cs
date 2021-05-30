@@ -1,5 +1,5 @@
 using System.IO;
-using SpaceJailRunner.Scene;
+using SpaceJailRunner.Data;
 using UnityEngine;
 
 namespace SpaceJailRunner.Data
