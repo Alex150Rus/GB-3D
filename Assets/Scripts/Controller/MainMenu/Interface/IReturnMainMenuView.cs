@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpaceJailRunner.Controller.Interface
+namespace SpaceJailRunner.Controller.MainMenu.Interface
 {
     internal interface IReturnMainMenuView
     {

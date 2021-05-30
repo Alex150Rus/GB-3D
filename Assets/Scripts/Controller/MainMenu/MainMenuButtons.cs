@@ -14,6 +14,7 @@ namespace SpaceJailRunner.Controller.MainMenu
 
         public MainMenuButtons(Transform mainMenuView)
         {
+            //сразу получить нужное
             Button[] btnMainMenu = mainMenuView.GetChild(0).GetChild(0).GetChild(1)
                 .GetComponentsInChildren<Button>();
             Button[] btnSettingsMenu = mainMenuView.GetChild(1).GetChild(0).GetChild(1)

@@ -5,15 +5,14 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal sealed class MainMenuInit: IInit, IReturnMainMenuView
+    internal sealed class MainMenuInit: IInit, IReturnMainMenuView, IReturnLevelMenu, IReturnMainMenu, 
+        IReturnSettingsMenu
     {
-        private Transform _mainMenuView;
-        private readonly IMainMenuFactory _mainMenuFactory;
+        private readonly Transform _mainMenuView;
         
         public MainMenuInit(IMainMenuFactory mainMenuFactory)
         {
             _mainMenuView = mainMenuFactory.Create();
-            _mainMenuFactory = mainMenuFactory;
         }
         
         public void Init()
@@ -24,6 +23,21 @@ namespace SpaceJailRunner.Controller.MainMenu
         public Transform GetMainMenuView()
         {
             return _mainMenuView;
+        }
+
+        public Transform GetLevelMenu()
+        {
+            return _mainMenuView.GetChild(2).GetChild(0);
+        }
+
+        public Transform GetMainMenu()
+        {
+            return _mainMenuView.GetChild(0).GetChild(0);
+        }
+
+        public Transform GetSettingsMenu()
+        {
+            return _mainMenuView.GetChild(1).GetChild(0);
         }
     }
 }

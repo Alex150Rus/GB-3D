@@ -12,11 +12,11 @@ namespace SpaceJailRunner.Controller.MainMenu
     private readonly CanvasGroup _settings;
     private readonly CanvasGroup _levels;
 
-    public CanvasGroupSwitcher(Transform menuInit)
+    public CanvasGroupSwitcher(MainMenuInit menuInit)
     {
-        _mainMenu = menuInit.GetChild(0).GetChild(0).GetComponent<CanvasGroup>();
-        _settings = menuInit.GetChild(1).GetChild(0).GetComponent<CanvasGroup>();
-        _levels = menuInit.GetChild(2).GetChild(0).GetComponent<CanvasGroup>();
+        _mainMenu = menuInit.GetMainMenu().GetComponent<CanvasGroup>();
+        _settings = menuInit.GetSettingsMenu().GetComponent<CanvasGroup>();
+        _levels = menuInit.GetLevelMenu().GetComponent<CanvasGroup>();
         SetCurrentScreen(Screen.Main);
 
     }
