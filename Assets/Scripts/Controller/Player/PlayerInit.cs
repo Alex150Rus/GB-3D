@@ -5,19 +5,13 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Player
 {
-    internal sealed class PlayerInit: IGetStartPlayer, IGetPlayer
+    internal sealed class PlayerInit: IGetPlayer
     {
         private Transform _player;
         
         public PlayerInit(PlayerFactory playerFactory)
         {
             _player = playerFactory.CreatePlayer();
-        }
-
-
-        public Transform GetPlayer(PlayerData playerData, int sceneNumber)
-        {
-            return _player;
         }
 
         public Transform GetPlayer()
