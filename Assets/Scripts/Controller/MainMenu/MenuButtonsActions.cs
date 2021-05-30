@@ -1,7 +1,8 @@
 using System;
 using SpaceJailRunner.Controller.MainMenu.Interface;
 using SpaceJailRunner.MainMenu;
-using UnityEngine;
+using SpaceJailRunner.Scene;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace SpaceJailRunner.Controller.MainMenu
@@ -9,10 +10,12 @@ namespace SpaceJailRunner.Controller.MainMenu
     internal sealed class MenuButtonsActions : IButtonAction
     {
         private readonly CanvasGroupSwitcher _canvasGroupSwitcher;
+        private readonly SceneNames _sceneNames;
 
-        public MenuButtonsActions(CanvasGroupSwitcher canvasGroupSwitcher)
+        public MenuButtonsActions(CanvasGroupSwitcher canvasGroupSwitcher, SceneNames sceneNames)
         {
             _canvasGroupSwitcher = canvasGroupSwitcher;
+            _sceneNames = sceneNames;
         }
         
         public void ButtonAction(Button btn)
@@ -47,7 +50,7 @@ namespace SpaceJailRunner.Controller.MainMenu
 
         private void StartBtnAction()
         {
-           // _sceneLoader.LoadScene(1);
+            SceneManager.LoadScene(_sceneNames.GameSceneNames[1]);
         }
 
         private void LevelBtnAction()
@@ -57,7 +60,7 @@ namespace SpaceJailRunner.Controller.MainMenu
 
         private void LevelChoosingBtnAction(int levelNumber)
         {
-            //_sceneLoader.LoadScene(levelNumber);
+            SceneManager.LoadScene(_sceneNames.GameSceneNames[levelNumber]);
         }
 
         private void MainMenuBtnAction()

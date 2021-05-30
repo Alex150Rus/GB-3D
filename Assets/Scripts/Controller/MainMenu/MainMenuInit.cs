@@ -16,6 +16,14 @@ namespace SpaceJailRunner.Controller.MainMenu
         public MainMenuInit(IMainMenuFactory mainMenuFactory)
         {
             _mainMenuView = mainMenuFactory.Create();
+            SetSubMenus();
+        }
+
+        private void SetSubMenus()
+        {
+            _levelMenu = _mainMenuView.GetChild(2).GetChild(0);
+            _mainMenu =  _mainMenuView.GetChild(0).GetChild(0);
+            _settingsMenu =  _mainMenuView.GetChild(1).GetChild(0);
         }
         
         public void Init()
@@ -30,17 +38,17 @@ namespace SpaceJailRunner.Controller.MainMenu
 
         public Transform GetLevelMenu()
         {
-            return _levelMenu =_mainMenuView.GetChild(2).GetChild(0);
+            return _levelMenu;
         }
 
         public Transform GetMainMenu()
         {
-            return _mainMenu = _mainMenuView.GetChild(0).GetChild(0);
+            return _mainMenu;
         }
 
         public Transform GetSettingsMenu()
         {
-            return _settingsMenu = _mainMenuView.GetChild(1).GetChild(0);
+            return _settingsMenu;
         }
 
         public Transform GetLevelMenuButtonsLayout()

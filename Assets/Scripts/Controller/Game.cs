@@ -27,48 +27,35 @@ namespace SpaceJailRunner.Controller
             
             if (SceneManager.GetActiveScene().name == _data.SceneNames.GameSceneNames[0])
             {
-                   Debug.Log("MainMenu");
+                   MainMenuFactory mainMenuFactory = new MainMenuFactory();
+                   MainMenuInit mainMenuInit = new MainMenuInit(mainMenuFactory);
+                   
+                   MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit);
+                   CanvasGroupSwitcher canvasGroupSwitcher = new CanvasGroupSwitcher(mainMenuInit);
+                   MainMenuButtonsClicked mainMenuButtonsClicked = 
+                       new MainMenuButtonsClicked(mainMenuButtonsController, 
+                           new MenuButtonsActions(canvasGroupSwitcher, _data.SceneNames));
+                   
+                   _controller.Add(mainMenuInit);
+                   _controller.Add(mainMenuButtonsController);
+                   _controller.Add(mainMenuButtonsClicked);
+                   
             }
             else
             {
                 
             }
             
-            // LevelFactory levelFactory = new LevelFactory();
-            // LevelSwitcher levelSwitcher = new LevelSwitcher(levelFactory);
-            //
             // #region Player
             //
             // PlayerFactory playerFactory = new PlayerFactory();
             // PlayerInit playerInit = new PlayerInit(playerFactory);
             //
-            // #endregion
-            //
-            //
-            // #region MainMenu
-            //
-            // MainMenuFactory mainMenueFactory = new MainMenuFactory();
-            // MainMenuInit mainMenuInit = new MainMenuInit(mainMenueFactory);
-            //
-            // #region SceneLoader
-            //
-            // SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit.GetMainMenuView(), playerInit, _data);
-            // _controller.Add(sceneLoader);
-            // #endregion
             //
             // PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer());
             // _controller.Add(playerFollowingCamera);
             //
-            // MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit.GetMainMenuView());
-            // CanvasGroupSwitcher canvasGroupSwitcher = new CanvasGroupSwitcher(mainMenuInit.GetMainMenuView());
-            // MainMenuButtonsClicked mainMenuButtonsClicked = 
-            //     new MainMenuButtonsClicked(mainMenuButtonsController, 
-            //         new MenuButtonsActions(canvasGroupSwitcher, sceneLoader));
-            //
-            // _controller.Add(mainMenuInit);
-            //
-            // _controller.Add(mainMenuButtonsController);
-            // _controller.Add(mainMenuButtonsClicked);
+           
             // #endregion
 
         }
