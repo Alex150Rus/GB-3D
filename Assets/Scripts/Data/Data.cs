@@ -1,4 +1,5 @@
 using System.IO;
+using SpaceJailRunner.Scene;
 using UnityEngine;
 
 namespace SpaceJailRunner.Data
@@ -7,7 +8,10 @@ namespace SpaceJailRunner.Data
     internal class Data : ScriptableObject
     {
         [SerializeField] private string _playerDataPath;
+        [SerializeField] private string _sceneNamesDataPath;
+       
         private PlayerData _player;
+        private SceneNames _sceneNames;
         
         public PlayerData Player
         {
@@ -21,7 +25,20 @@ namespace SpaceJailRunner.Data
                 return _player;
             }
         }
-        
+
+        public SceneNames SceneNames
+        {
+            get
+            {
+                if (_sceneNames == null)
+                {
+                    _sceneNames = Load<SceneNames>("Data/" + _sceneNamesDataPath);
+                }
+
+                return _sceneNames;
+            }
+        }
+
         private T Load<T>(string resourcesPath) where T : Object =>
             Resources.Load<T>(Path.ChangeExtension(resourcesPath, null));
     }
