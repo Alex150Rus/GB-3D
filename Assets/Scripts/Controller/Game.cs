@@ -43,20 +43,11 @@ namespace SpaceJailRunner.Controller
             }
             else
             {
-                
+                PlayerFactory playerFactory = new PlayerFactory();
+                PlayerInit playerInit = new PlayerInit(playerFactory);
+                PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer());
+                _controller.Add(playerFollowingCamera);
             }
-            
-            // #region Player
-            //
-            // PlayerFactory playerFactory = new PlayerFactory();
-            // PlayerInit playerInit = new PlayerInit(playerFactory);
-            //
-            //
-            // PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer());
-            // _controller.Add(playerFollowingCamera);
-            //
-           
-            // #endregion
 
         }
     }

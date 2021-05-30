@@ -8,7 +8,7 @@ namespace SpaceJailRunner.Controller.Cameras
     {
 
         private readonly Camera _camera;
-        private Transform _player;
+        private readonly Transform _player;
         
         public PlayerFollowingCamera(Camera camera, Transform player)
         {
@@ -18,8 +18,7 @@ namespace SpaceJailRunner.Controller.Cameras
 
         public void LateExecute(float deltaTime)
         {
-            if (_player.gameObject.activeSelf)
-                _camera.transform.position = _player.transform.position;
+            _camera.transform.position = _player.transform.position;
         }
     }
 }
