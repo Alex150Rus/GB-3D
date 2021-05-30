@@ -7,24 +7,18 @@ namespace SpaceJailRunner.Controller.Player
 {
     internal sealed class PlayerInit: IGetStartPlayer, IGetPlayer
     {
-        private readonly PlayerFactory _playerFactory;
         private Transform _player;
         
         public PlayerInit(PlayerFactory playerFactory)
         {
-            _playerFactory = playerFactory;
+            _player = playerFactory.CreatePlayer();
         }
 
-        private void CreatePlayer()
-        {
-            _player = _playerFactory.CreatePlayer();
-        }
-        
-        
+
         public Transform GetPlayer(PlayerData playerData, int sceneNumber)
         {   
-            if(_player == null)
-                CreatePlayer();
+            if(!_player.gameObject.activeSelf)
+                _player.gameObject.SetActive(true);
             
             SetPlayerPosition(playerData, sceneNumber);
             return _player;

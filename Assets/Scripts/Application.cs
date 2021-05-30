@@ -29,6 +29,12 @@ namespace SpaceJailRunner
             _controllers.Execute(deltaTime);
         }
 
+        private void LateUpdate()
+        {
+            var deltaTime = Time.deltaTime;
+            _controllers.LateExecute(deltaTime);
+        }
+
         private void OnDestroy()
         {
             _controllers.CleanUp();

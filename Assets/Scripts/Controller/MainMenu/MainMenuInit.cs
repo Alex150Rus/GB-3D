@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace SpaceJailRunner.Controller.MainMenu
 {
-    internal sealed class MainMenuInit: IInit, IReturnMainMenuView, ICreateMainMenu, IDestroyMainMenu
+    internal sealed class MainMenuInit: IInit, IReturnMainMenuView
     {
         private Transform _mainMenuView;
         private readonly IMainMenuFactory _mainMenuFactory;
@@ -24,18 +24,6 @@ namespace SpaceJailRunner.Controller.MainMenu
         public Transform GetMainMenuView()
         {
             return _mainMenuView;
-        }
-
-        public void CreateMenu()
-        {
-            if (_mainMenuView)
-                return;
-            _mainMenuView = _mainMenuFactory.Create();
-        }
-
-        public void DestroyMenu()
-        {
-            Object.Destroy(_mainMenuView.gameObject);
         }
     }
 }

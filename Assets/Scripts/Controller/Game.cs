@@ -1,4 +1,4 @@
-using SpaceJailRunner.Controller.Interface;
+using SpaceJailRunner.Controller.Cameras;
 using SpaceJailRunner.Controller.Level;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Player;
@@ -37,6 +37,7 @@ namespace SpaceJailRunner.Controller
 
             #endregion
 
+
             #region MainMenu
             
             MainMenuFactory mainMenueFactory = new MainMenuFactory();
@@ -44,9 +45,12 @@ namespace SpaceJailRunner.Controller
 
             #region SceneLoader
 
-            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit, playerInit, _data);
+            SceneLoader sceneLoader = new SceneLoader(levelSwitcher, mainMenuInit.GetMainMenuView(), playerInit, _data);
             _controller.Add(sceneLoader);
             #endregion
+            
+            PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer());
+            _controller.Add(playerFollowingCamera);
 
             MainMenuButtons mainMenuButtonsController = new MainMenuButtons (mainMenuInit.GetMainMenuView());
             CanvasGroupSwitcher canvasGroupSwitcher = new CanvasGroupSwitcher(mainMenuInit.GetMainMenuView());

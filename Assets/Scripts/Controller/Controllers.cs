@@ -3,19 +3,21 @@ using SpaceJailRunner.Controller.Interface;
 
 namespace SpaceJailRunner.Controller
 {
-    public sealed class Controllers: IInit, IExecute, IFixedExecute, ICleanUp
+    public sealed class Controllers: IInit, IExecute, IFixedExecute, ICleanUp, ILateExecute
     {
         private readonly List<IInit> _initializeControllers;
         private readonly List<IExecute> _executeControllers;
-        private readonly List<IFixedExecute> _lateControllers;
+        private readonly List<IFixedExecute> _fixedControllers;
         private readonly List<ICleanUp> _cleanupControllers;
+        private readonly List<ILateExecute> _lateControllers;
 
         internal Controllers()
         {
             _initializeControllers = new List<IInit>();
             _executeControllers = new List<IExecute>();
-            _lateControllers = new List<IFixedExecute>();
+            _fixedControllers = new List<IFixedExecute>();
             _cleanupControllers = new List<ICleanUp>();
+            _lateControllers = new List<ILateExecute>();
         }
 
         internal Controllers Add(IController controller)
@@ -32,12 +34,17 @@ namespace SpaceJailRunner.Controller
 
             if (controller is IFixedExecute fixedExecuteController)
             {
-                _lateControllers.Add(fixedExecuteController);
+                _fixedControllers.Add(fixedExecuteController);
             }
             
             if (controller is ICleanUp cleanupController)
             {
                 _cleanupControllers.Add(cleanupController);
+            }
+            
+            if (controller is ILateExecute lateController)
+            {
+                _lateControllers.Add(lateController);
             }
 
             return this;
@@ -61,9 +68,9 @@ namespace SpaceJailRunner.Controller
         
         public void FixedExecute(float deltaTime)
         {
-            for (var index = 0; index < _lateControllers.Count; ++index)
+            for (var index = 0; index < _fixedControllers.Count; ++index)
             {
-                _lateControllers[index].FixedExecute(deltaTime);
+                _fixedControllers[index].FixedExecute(deltaTime);
             }
         }
 
@@ -72,6 +79,14 @@ namespace SpaceJailRunner.Controller
             for (var index = 0; index < _cleanupControllers.Count; ++index)
             {
                 _cleanupControllers[index].CleanUp();
+            }
+        }
+
+        public void LateExecute(float deltaTime)
+        {
+            for (var index = 0; index < _lateControllers.Count; ++index)
+            {
+                _lateControllers[index].LateExecute(deltaTime);
             }
         }
     }
