@@ -12,15 +12,12 @@ namespace SpaceJailRunner.Controller.MainMenu
         private readonly Button[] _btn;
         public event Action<Button> OnClick;
 
-        public MainMenuButtons(Transform mainMenuView)
+        public MainMenuButtons(MainMenuInit mainMenuInit)
         {
             //сразу получить нужное
-            Button[] btnMainMenu = mainMenuView.GetChild(0).GetChild(0).GetChild(1)
-                .GetComponentsInChildren<Button>();
-            Button[] btnSettingsMenu = mainMenuView.GetChild(1).GetChild(0).GetChild(1)
-                .GetComponentsInChildren<Button>();
-            Button[] btnLevelsMenu = mainMenuView.GetChild(2).GetChild(0).GetChild(1)
-                .GetComponentsInChildren<Button>();
+            Button[] btnMainMenu = mainMenuInit.GetMainMenuButtonsLayout().GetComponentsInChildren<Button>();
+            Button[] btnSettingsMenu = mainMenuInit.GetSettingsMenuButtonsLayout().GetComponentsInChildren<Button>();
+            Button[] btnLevelsMenu = mainMenuInit.GetMainMenuButtonsLayout().GetComponentsInChildren<Button>();
 
             _btn = btnMainMenu.Union(btnSettingsMenu).Union(btnLevelsMenu).ToArray();
         }
