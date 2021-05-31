@@ -1,4 +1,5 @@
 using SpaceJailRunner.Controller.Cameras;
+using SpaceJailRunner.Controller.Enemy;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Enemy;
@@ -50,9 +51,8 @@ namespace SpaceJailRunner.Controller
                     _data.Camera);
 
                 var abstractEnemyFactory = new AbstractEnemyFactory();
-                
-                abstractEnemyFactory.Create(EnemyType.Patrolling);
-                abstractEnemyFactory.Create(EnemyType.Static);
+                var enemyStartPoints = new EnemyStartPoints();
+                var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints);
                 
                 
                 _controller.Add(playerFollowingCamera);

@@ -140,53 +140,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1167352921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3434538759526633115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3e1b7ff6d10f4b4cb3357ef882138c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemy: {fileID: 2637751969179961719}
-  _enemyDistance: 23
-  _closeAttackDistance: 1
-  onTargetIsVisible:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1167352922}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: ChaseEnemy
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  onTargetIsInvisible:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1167352922}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: StopChase
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _navMeshAgent: {fileID: 5804917706744687258}
-  _stickWeapon: {fileID: 8316110839149693607}
 --- !u!114 &1167352922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +171,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1167352921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetWalkOrRunState
         m_Mode: 1
@@ -245,7 +198,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1167352921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetWalkOrRunState
         m_Mode: 1
@@ -279,7 +232,7 @@ MonoBehaviour:
   _patrol:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167352921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetWalkOrRunState
         m_Mode: 1
@@ -636,7 +589,7 @@ MonoBehaviour:
   _CloseAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1167352921}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: SetCloseAttackState
         m_Mode: 1
@@ -822,15 +775,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f518fb7f3e6ce7f47985911de1366469, type: 3}
---- !u!1 &3434538759526633115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3374164278233798146, guid: f518fb7f3e6ce7f47985911de1366469,
-    type: 3}
-  m_PrefabInstance: {fileID: 106571567786711193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2637751969179961719 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
+    type: 3}
+  m_PrefabInstance: {fileID: 106571567786711193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3434538759526633115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3374164278233798146, guid: f518fb7f3e6ce7f47985911de1366469,
     type: 3}
   m_PrefabInstance: {fileID: 106571567786711193}
   m_PrefabAsset: {fileID: 0}
