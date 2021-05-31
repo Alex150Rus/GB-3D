@@ -29,9 +29,10 @@ namespace SpaceJailRunner.Controller.Enemy
             
             for (int i = 0; i < enemyStartPointsArray.Length; i++)
             {
-                AddEnemyToTheList(enemyType, enemyFactory.Create(enemyType));
+                var enemy = enemyFactory.Create(enemyType);
+                AddEnemyToTheList(enemyType, enemy);
+                enemy.transform.SetPositionAndRotation(enemyStartPointsArray[i].transform.position, Quaternion.identity);
             }
-            
         }
 
         private void AddEnemyToTheList(EnemyType enemyType, SpaceJailRunner.Enemy.Enemy enemy)
