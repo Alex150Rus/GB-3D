@@ -10,10 +10,12 @@ namespace SpaceJailRunner.Data
         [SerializeField] private string _playerDataPath;
         [SerializeField] private string _sceneNamesDataPath;
         [SerializeField] private string _cameraDataPath;
+        [SerializeField] private string _levelWayPointsPath;
        
         private PlayerData _player;
         private SceneNames _sceneNames;
         private CameraData _camera;
+        private LevelWayPointsData _levelWayPointsData;
         
         public PlayerData Player
         {
@@ -51,6 +53,19 @@ namespace SpaceJailRunner.Data
                 }
 
                 return _camera;
+            }
+        }
+        
+        public LevelWayPointsData LevelWayPoints
+        {
+            get
+            {
+                if (_levelWayPointsData == null)
+                {
+                    _levelWayPointsData = Load<LevelWayPointsData>("Data/" + _levelWayPointsPath);
+                }
+
+                return _levelWayPointsData;
             }
         }
 

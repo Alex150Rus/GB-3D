@@ -18,8 +18,6 @@ namespace SpaceJailRunner.Controller.Enemy
             
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Patrolling);
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Static);
-
-            Debug.Log(_patrollingEnemy.Count);
         }
 
         private void SetListOfEnemies(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints,
@@ -29,9 +27,8 @@ namespace SpaceJailRunner.Controller.Enemy
             
             for (int i = 0; i < enemyStartPointsArray.Length; i++)
             {
-                var enemy = enemyFactory.Create(enemyType);
+                var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 AddEnemyToTheList(enemyType, enemy);
-                enemy.transform.SetPositionAndRotation(enemyStartPointsArray[i].transform.position, Quaternion.identity);
             }
         }
 

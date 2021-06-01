@@ -5,10 +5,10 @@ namespace SpaceJailRunner.Enemy
 {
     internal class StaticEnemyFactory : ICreateEnemy
     {
-        public Enemy Create()
+        public Enemy Create(Transform transform)
         {
             var enemy = Resources.Load<Enemy>("Prefabs/Chars/PolicemanTurret");
-            var enemyInstance = GameObject.Instantiate(enemy);
+            var enemyInstance = GameObject.Instantiate(enemy, transform.position, transform.rotation, transform.parent);
             return enemyInstance;
         }
     }

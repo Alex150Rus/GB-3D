@@ -1,5 +1,6 @@
 using System;
 using SpaceJailRunner.Enemy.Interface;
+using UnityEngine;
 
 namespace SpaceJailRunner.Enemy
 {
@@ -14,14 +15,14 @@ namespace SpaceJailRunner.Enemy
             _patrollingEnemyFactory = new PatrollingEnemyFactory();
         }
         
-        public Enemy Create(EnemyType enemyType)
+        public Enemy Create(EnemyType enemyType, Transform transform)
         {
             switch (enemyType)
             {
                 case EnemyType.Patrolling:
-                    return _patrollingEnemyFactory.Create();
+                    return _patrollingEnemyFactory.Create(transform);
                 case EnemyType.Static:
-                    return _staticEnemyFactory.Create();
+                    return _staticEnemyFactory.Create(transform);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
