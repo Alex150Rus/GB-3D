@@ -8,7 +8,7 @@ namespace SpaceJailRunner.Enemy
         public Enemy Create(Transform transform)
         {
             var enemy = Resources.Load<Enemy>("Prefabs/Chars/Policeman");
-            var enemyInstance = GameObject.Instantiate(enemy, transform.position, transform.rotation, transform.parent);
+            var enemyInstance = GameObject.Instantiate(enemy, transform.position, transform.rotation, transform);
             return enemyInstance;
         }
     }
