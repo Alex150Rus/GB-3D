@@ -140,37 +140,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2752136002329716436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3434538759526633115}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9f9dc787174ac249afeb9b146fd6d7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _navMeshAgent: {fileID: 5804917706744687258}
-  _waypoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  _patrol:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetWalkOrRunState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &4569154063708533824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,15 +671,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f518fb7f3e6ce7f47985911de1366469, type: 3}
---- !u!4 &2637751969179961719 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
-    type: 3}
-  m_PrefabInstance: {fileID: 106571567786711193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3434538759526633115 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3374164278233798146, guid: f518fb7f3e6ce7f47985911de1366469,
+    type: 3}
+  m_PrefabInstance: {fileID: 106571567786711193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2637751969179961719 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2729659895578776046, guid: f518fb7f3e6ce7f47985911de1366469,
     type: 3}
   m_PrefabInstance: {fileID: 106571567786711193}
   m_PrefabAsset: {fileID: 0}

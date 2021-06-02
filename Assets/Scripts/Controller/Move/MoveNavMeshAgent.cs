@@ -21,8 +21,6 @@ namespace SpaceJailRunner.Controller.Move
                 var enemyId = waypoints.GetInstanceID();
                 _waypoints = waypoints.GetComponentsInChildren<Transform>().
                     Where(transform => transform.GetInstanceID() != enemyId).ToArray();
-                Debug.Log( _waypoints.Length);
-                Debug.Log(_waypoints[0].name);    
             }
         }
 
