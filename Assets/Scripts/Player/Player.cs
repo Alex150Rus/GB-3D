@@ -1,12 +1,13 @@
-using System;
 using UnityEngine;
 
-namespace SpaceJailRunner.Enemy
+namespace SpaceJailRunner.Player
 {
-    public class Enemy: MonoBehaviour
+    internal class Player: MonoBehaviour
     {
         private Health.Health _health;
+
         public Health.Health Health => _health;
+
         private void Awake()
         {
             _health = new Health.Health();

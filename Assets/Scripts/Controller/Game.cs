@@ -3,6 +3,7 @@ using SpaceJailRunner.Controller.Enemy;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Move;
 using SpaceJailRunner.Controller.Player;
+using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
 using SpaceJailRunner.MainMenu;
 using SpaceJailRunner.Player;
@@ -47,16 +48,15 @@ namespace SpaceJailRunner.Controller
             else
             {
                 PlayerFactory playerFactory = new PlayerFactory();
-                PlayerInit playerInit = new PlayerInit(playerFactory);
-                PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, playerInit.GetPlayer(),
-                    _data.Camera);
+                PlayerInit playerInit = new PlayerInit(playerFactory, _data.Player);
+                PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, 
+                    playerInit.GetPlayer().transform,_data.Camera);
 
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
                 var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints);
 
                 var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
-                
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);

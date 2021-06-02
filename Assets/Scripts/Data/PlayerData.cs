@@ -7,6 +7,7 @@ namespace SpaceJailRunner.Data
     [CreateAssetMenu(fileName = "PlayerData", menuName = "Data/PlayerData", order = 0)]
     public class PlayerData : ScriptableObject
     {
+        [SerializeField] private float _healthPoints = 100f;
         [SerializeField] private float _moveSpeedMultiplyer = 9.0f;
         [SerializeField] private float _jumpForce = 180f;
         [SerializeField] private float _jumpStateStartsPos = 0.3f;
@@ -16,5 +17,7 @@ namespace SpaceJailRunner.Data
         public float JumpForce => _jumpForce;
         public float JumpStateStartsPos => _jumpStateStartsPos;
         public PlayerState PlayerStartingState => _playerStartingState;
+
+        public float HealthPoints => _healthPoints;
     }
 }
