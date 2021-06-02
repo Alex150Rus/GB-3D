@@ -10,10 +10,12 @@ namespace SpaceJailRunner.Data
         [SerializeField] private string _playerDataPath;
         [SerializeField] private string _sceneNamesDataPath;
         [SerializeField] private string _cameraDataPath;
+        [SerializeField] private string _enemyDataPath;
        
         private PlayerData _player;
         private SceneNames _sceneNames;
         private CameraData _camera;
+        private EnemyData _enemy;
 
         public PlayerData Player
         {
@@ -51,6 +53,19 @@ namespace SpaceJailRunner.Data
                 }
 
                 return _camera;
+            }
+        }
+        
+        public EnemyData Enemy
+        {
+            get
+            {
+                if (_enemy == null)
+                {
+                    _enemy = Load<EnemyData>("Data/" + _enemyDataPath);
+                }
+
+                return _enemy;
             }
         }
 

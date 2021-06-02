@@ -1,4 +1,4 @@
-namespace SpaceJailRunner.Tags
+namespace SpaceJailRunner.NameManager.Tags
 {
     internal static class TagNamesManager
     {

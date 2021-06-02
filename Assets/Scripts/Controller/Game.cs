@@ -54,12 +54,20 @@ namespace SpaceJailRunner.Controller
 
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
-                var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints);
+                var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy);
 
                 var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
+
+                var detector = new DetectEnemy();
+                var playerDetector = new PlayerDetector(detector,playerInit.GetPlayer(),
+                    enemyInit.GetListOfEnemies());
+
+                var enemyAttack = new EnemyAttack(enemyInit.GetListOfEnemies());
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
+                _controller.Add(playerDetector);
+                _controller.Add(enemyAttack);
             }
 
         }

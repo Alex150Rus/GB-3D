@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using SpaceJailRunner.Enemy.Interface;
-using SpaceJailRunner.Tags;
+using SpaceJailRunner.NameManager.Tags;
 using UnityEngine;
 
 namespace SpaceJailRunner.Enemy

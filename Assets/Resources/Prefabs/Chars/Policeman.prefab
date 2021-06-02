@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f14ee4fa1e3064eb973501589c6adb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: {fileID: 4569154063708533824}
+  _health: {fileID: 0}
   _healthImage: {fileID: 5417569335379933952}
   _camera: {fileID: 0}
 --- !u!54 &4050573585647786901
@@ -140,19 +140,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4569154063708533824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3434538759526633115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26dae4885cf7064f9ab865c3a873be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _health: 100
 --- !u!195 &5804917706744687258
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -579,7 +566,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &281514792051454046
 MonoBehaviour:
   m_ObjectHideFlags: 0

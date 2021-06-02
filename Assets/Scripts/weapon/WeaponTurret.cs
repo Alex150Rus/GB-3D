@@ -1,27 +1,28 @@
 using System;
 using SpaceJailRunner.Ammos;
+using UnityEditor;
 using UnityEditor.Timeline.Actions;
+using UnityEngine;
 
 namespace SpaceJailRunner.weapon
 {
     internal sealed class WeaponTurret: WeaponWithAmmo
     {
-        public event Action<float> OnDoingDamage;
-        
         public Ammo Ammo
         {
             get => _ammo;
             set => _ammo = value;
         }
         
-        WeaponTurret(Ammo ammo)
+        public WeaponTurret(Ammo ammo)
         {
             _ammo = ammo;
         }
         
-        public override void DoDamage()
+        public override void DoDamage(Health.Health health)
         {
-            OnDoingDamage?.Invoke(_ammo.DamagePoints);
+            health.TakeDamage(_ammo.DamagePoints);
+            Debug.Log(health.HealthPoints);
         }
     }
 }

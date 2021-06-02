@@ -1,6 +1,6 @@
 using SpaceJailRunner.Player.Interface;
 using SpaceJailRunner.Prefabs_my;
-using SpaceJailRunner.Tags;
+using SpaceJailRunner.NameManager.Tags;
 using UnityEngine;
 
 namespace SpaceJailRunner.Player

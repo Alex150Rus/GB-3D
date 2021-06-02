@@ -12,11 +12,13 @@ namespace SpaceJailRunner.Controller.Enemy
     {
         private List<SpaceJailRunner.Enemy.Enemy> _patrollingEnemy;
         private List<SpaceJailRunner.Enemy.Enemy> _staticEnemy;
+        private EnemyData _enemyData;
        
-        public EnemyInit(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints)
+        public EnemyInit(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints, EnemyData enemyData)
         {
             _patrollingEnemy = new List<SpaceJailRunner.Enemy.Enemy>();
             _staticEnemy = new List<SpaceJailRunner.Enemy.Enemy>();
+            _enemyData = enemyData;
             
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Patrolling);
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Static);
@@ -30,6 +32,7 @@ namespace SpaceJailRunner.Controller.Enemy
             for (int i = 0; i < enemyStartPointsArray.Length; i++)
             {
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
+                enemy.Health.HealthPoints = _enemyData.HealthPoints;
                 AddEnemyToTheList(enemyType, enemy);
             }
         }
