@@ -1,6 +1,7 @@
 using SpaceJailRunner.Controller.Cameras;
 using SpaceJailRunner.Controller.Enemy;
 using SpaceJailRunner.Controller.MainMenu;
+using SpaceJailRunner.Controller.Move;
 using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Enemy;
 using SpaceJailRunner.MainMenu;
@@ -53,9 +54,12 @@ namespace SpaceJailRunner.Controller
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
                 var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints);
+
+                var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
                 
                 
                 _controller.Add(playerFollowingCamera);
+                _controller.Add(patrollingEnemyMoveController);
             }
 
         }

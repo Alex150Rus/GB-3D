@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using SpaceJailRunner.Controller.Enemy.Interface;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
 using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Enemy
 {
-    internal class EnemyInit
+    internal class EnemyInit : IReturnListOfEnemies, IReturnListOfPatrollingEnemies
     {
         private List<SpaceJailRunner.Enemy.Enemy> _patrollingEnemy;
         private List<SpaceJailRunner.Enemy.Enemy> _staticEnemy;
@@ -45,6 +47,16 @@ namespace SpaceJailRunner.Controller.Enemy
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        public List<SpaceJailRunner.Enemy.Enemy> GetListOfEnemies()
+        {
+            return _patrollingEnemy.Union(_staticEnemy).ToList();
+        }
+
+        public List<SpaceJailRunner.Enemy.Enemy> GetPatrollingEnemies()
+        {
+            return _patrollingEnemy;
         }
     }
 }
