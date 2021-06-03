@@ -4,6 +4,7 @@ using SpaceJailRunner.Controller.Enemy;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Move;
 using SpaceJailRunner.Controller.Player;
+using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
 using SpaceJailRunner.MainMenu;
@@ -48,6 +49,8 @@ namespace SpaceJailRunner.Controller
             }
             else
             {
+                var input = new InputInit();
+                
                 PlayerFactory playerFactory = new PlayerFactory();
                 PlayerInit playerInit = new PlayerInit(playerFactory, _data.Player);
                 PlayerFollowingCamera playerFollowingCamera = new PlayerFollowingCamera(_camera, 
@@ -66,14 +69,15 @@ namespace SpaceJailRunner.Controller
                     enemyInit.GetListOfEnemies());
 
                 var enemyAttack = new EnemyAttack(enemyInit.GetListOfEnemies());
-
                 
-               
+                var physicsMover = new PhysicsMove(playerInit.GetPlayer(),_data.Player, input.GetInput());
+                var playerMove = new PlayerMove(physicsMover, input.GetInput());
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
                 _controller.Add(playerDetector);
                 _controller.Add(enemyAttack);
+                _controller.Add(playerMove);
             }
 
         }

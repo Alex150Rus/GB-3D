@@ -12,12 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f9a331f108f414abf600ecde6b6bf2d, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  _startPositions:
-  - {x: -0.18, y: 1, z: 1}
-  - {x: -18, y: 0, z: -4}
-  _startRotations:
-  - 180
-  - 90
+  _healthPoints: 100
+  _playerSpeed: 700
   _moveSpeedMultiplyer: 9
   _jumpForce: 180
   _jumpStateStartsPos: 0.3
