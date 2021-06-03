@@ -34,8 +34,6 @@ namespace SpaceJailRunner.Enemy
         private void Awake()
         {
             _health = new Health.Health();
-            var ammo = new TurretBall();
-            _weapon = new WeaponTurret(ammo);
             EnemyIsInSight = false;
             _fireCourutineStarted = false;
         }

@@ -4,6 +4,6 @@ namespace SpaceJailRunner.Ammos.Interface
 {
     internal interface ICreateAmmo
     {
-        public Ammo CreateAmmo(Transform parent);
+        public Ammo CreateAmmo();
     }
 }

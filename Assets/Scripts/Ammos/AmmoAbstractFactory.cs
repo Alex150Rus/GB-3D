@@ -13,12 +13,12 @@ namespace SpaceJailRunner.Ammos
             _turretBallFactory = new TurretBallFactory();
         }
         
-        public Ammo CreateAmmo(Transform parent, AmmoType type)
+        public Ammo CreateAmmo(AmmoType type)
         {
             switch (type)
             {
                 case AmmoType.TurretBall:
-                    return _turretBallFactory.CreateAmmo(parent);
+                    return _turretBallFactory.CreateAmmo();
                 default: throw new ArgumentOutOfRangeException();
             }
         }

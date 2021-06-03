@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SpaceJailRunner.Ammos;
 using SpaceJailRunner.Controller.Enemy.Interface;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
+using SpaceJailRunner.weapon;
 using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Enemy
@@ -13,12 +15,15 @@ namespace SpaceJailRunner.Controller.Enemy
         private List<SpaceJailRunner.Enemy.Enemy> _patrollingEnemy;
         private List<SpaceJailRunner.Enemy.Enemy> _staticEnemy;
         private EnemyData _enemyData;
+        private AmmoAbstractFactory _ammoAbstarctFactorty;
        
-        public EnemyInit(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints, EnemyData enemyData)
+        public EnemyInit(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints, EnemyData enemyData,
+            AmmoAbstractFactory ammoAbstarctFactorty)
         {
             _patrollingEnemy = new List<SpaceJailRunner.Enemy.Enemy>();
             _staticEnemy = new List<SpaceJailRunner.Enemy.Enemy>();
             _enemyData = enemyData;
+            _ammoAbstarctFactorty = ammoAbstarctFactorty;
             
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Patrolling);
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Static);
@@ -33,6 +38,7 @@ namespace SpaceJailRunner.Controller.Enemy
             {
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 enemy.Health.HealthPoints = _enemyData.HealthPoints;
+                enemy.Weapon = new WeaponTurret(_ammoAbstarctFactorty.CreateAmmo(AmmoType.TurretBall));
                 AddEnemyToTheList(enemyType, enemy);
             }
         }

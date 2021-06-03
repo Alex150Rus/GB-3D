@@ -1,8 +1,10 @@
+using UnityEngine;
+
 namespace SpaceJailRunner.Ammos
 {
-    internal abstract class Ammo
+    internal class Ammo: MonoBehaviour
     {
         public float DamagePoints => damagePoints;
-        protected float damagePoints;
+        protected float damagePoints = 5.0f;
     }
 }
