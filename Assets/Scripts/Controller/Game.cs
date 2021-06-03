@@ -4,6 +4,7 @@ using SpaceJailRunner.Controller.Enemy;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Move;
 using SpaceJailRunner.Controller.Player;
+using SpaceJailRunner.Controller.Rotate;
 using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
@@ -72,12 +73,16 @@ namespace SpaceJailRunner.Controller
                 
                 var physicsMover = new PhysicsMove(playerInit.GetPlayer(),_data.Player, input.GetInput());
                 var playerMove = new PlayerMove(physicsMover, input.GetInput());
+
+                var physicsRotate = new PhysicsRotate(playerInit.GetPlayer(),_data.Player, input.GetInput());
+                var playerRotate = new PlayerRotate(physicsRotate, input.GetInput());
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
                 _controller.Add(playerDetector);
                 _controller.Add(enemyAttack);
                 _controller.Add(playerMove);
+                _controller.Add(playerRotate);
             }
 
         }
