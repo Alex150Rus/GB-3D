@@ -34,12 +34,12 @@ namespace SpaceJailRunner.Controller.UserInput
 
         public IUserInputKeDownProxy GetFireBtnInput()
         {
-            return _pcInputSpace;
+            return _pcInputFire;
         }
 
         public IUserInputKeDownProxy GetSpaceInput()
         {
-            return _pcInputFire;
+            return _pcInputSpace;
         }
     }
 }

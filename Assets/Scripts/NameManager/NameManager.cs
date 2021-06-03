@@ -6,6 +6,6 @@ namespace SpaceJailRunner.NameManager
 
         public const string VERTICAL_AXIS = "Vertical";
         public const string HORIZONTAL_AXIS = "Horizontal";
-        public const string FIRE_BUTTON = "Fire";
+        public const string FIRE_BUTTON = "Fire1";
     }
 }
