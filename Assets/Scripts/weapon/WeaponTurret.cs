@@ -19,10 +19,13 @@ namespace SpaceJailRunner.weapon
             _ammo = ammo;
         }
         
-        public override void DoDamage(Health.Health health)
+        public override void DoDamage(Health.Health health, Transform target, Transform source)
         {
-            health.TakeDamage(_ammo.DamagePoints);
-            Debug.Log(health.HealthPoints);
+            var ammo = _ammo.AmmoPool.GetOneAmmo(AmmoType.TurretBall);
+            ammo.transform.position = new Vector3(source.position.x ,source.position.y + 0.6f, source.position.z);
+            ammo.gameObject.SetActive(true);
+            ammo.transform.GetComponent<Rigidbody>().AddForce((target.position - source.position)*Time.deltaTime*50, ForceMode.Impulse);
+            Debug.Log(ammo.transform.position);
         }
     }
 }

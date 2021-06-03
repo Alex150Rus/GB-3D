@@ -371,7 +371,6 @@ GameObject:
   - component: {fileID: 8161574051915302641}
   - component: {fileID: 7858880124467781470}
   - component: {fileID: 3137393249813830535}
-  - component: {fileID: 8316110839149693607}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -456,34 +455,6 @@ CapsuleCollider:
   m_Height: 3.098096
   m_Direction: 1
   m_Center: {x: -2.2330961, y: 0.19012637, z: 3.5986123}
---- !u!114 &8316110839149693607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1535747216441157581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c42c2ae6df6b385428197ec732527a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 5
-  _CloseAttack:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetCloseAttackState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &6979182959116283429
 GameObject:
   m_ObjectHideFlags: 0

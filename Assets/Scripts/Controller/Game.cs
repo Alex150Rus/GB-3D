@@ -56,6 +56,7 @@ namespace SpaceJailRunner.Controller
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
                 var ammoAbstarctFactorty = new AmmoAbstractFactory();
+
                 var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy, ammoAbstarctFactorty);
 
                 var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
@@ -67,10 +68,7 @@ namespace SpaceJailRunner.Controller
                 var enemyAttack = new EnemyAttack(enemyInit.GetListOfEnemies());
 
                 
-                var ammoPool = new AmmoPool(5, ammoAbstarctFactorty);
-                var ammo = ammoPool.GetOneAmmo(AmmoType.TurretBall);
-                ammo.gameObject.SetActive(true);
-                Debug.Log(ammo.transform.position);
+               
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);

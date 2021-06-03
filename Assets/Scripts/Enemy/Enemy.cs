@@ -16,6 +16,7 @@ namespace SpaceJailRunner.Enemy
         private Weapon _weapon;
         private IHaveHealth _target;
         private bool _fireCourutineStarted;
+        private Transform _targetTransform;
         public Health.Health Health => _health;
         
         public Weapon Weapon
@@ -29,6 +30,8 @@ namespace SpaceJailRunner.Enemy
         public void SetTarget(IHaveHealth target)
         {
             _target = target;
+            if (target is Player.Player player)
+                _targetTransform = player.transform;
         }
 
         private void Awake()
@@ -52,9 +55,9 @@ namespace SpaceJailRunner.Enemy
         {
             while(EnemyIsInSight)
             {
-                Weapon.DoDamage(_target.Health);
+                Weapon.DoDamage(_target.Health, _targetTransform, transform);
                 yield return new WaitForSeconds(2);
-                Weapon.DoDamage(_target.Health);
+                Weapon.DoDamage(_target.Health, _targetTransform, transform);
             }
 
             _fireCourutineStarted = false;

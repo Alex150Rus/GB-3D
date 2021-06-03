@@ -16,6 +16,7 @@ namespace SpaceJailRunner.Controller.Enemy
         private List<SpaceJailRunner.Enemy.Enemy> _staticEnemy;
         private EnemyData _enemyData;
         private AmmoAbstractFactory _ammoAbstarctFactorty;
+        private AmmoPool _ammoPool;
        
         public EnemyInit(AbstractEnemyFactory enemyFactory, EnemyStartPoints enemyStartPoints, EnemyData enemyData,
             AmmoAbstractFactory ammoAbstarctFactorty)
@@ -24,6 +25,7 @@ namespace SpaceJailRunner.Controller.Enemy
             _staticEnemy = new List<SpaceJailRunner.Enemy.Enemy>();
             _enemyData = enemyData;
             _ammoAbstarctFactorty = ammoAbstarctFactorty;
+            _ammoPool = new AmmoPool(5, ammoAbstarctFactorty);
             
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Patrolling);
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Static);
@@ -39,6 +41,8 @@ namespace SpaceJailRunner.Controller.Enemy
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 enemy.Health.HealthPoints = _enemyData.HealthPoints;
                 enemy.Weapon = new WeaponTurret(_ammoAbstarctFactorty.CreateAmmo(AmmoType.TurretBall));
+                if (enemy.Weapon is WeaponTurret weaponTurret)
+                    weaponTurret.Ammo.AmmoPool = _ammoPool;
                 AddEnemyToTheList(enemyType, enemy);
             }
         }

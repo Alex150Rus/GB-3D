@@ -6,5 +6,11 @@ namespace SpaceJailRunner.Ammos
     {
         public float DamagePoints => damagePoints;
         protected float damagePoints = 5.0f;
+        protected AmmoPool _ammoPool;
+        public AmmoPool AmmoPool
+        {
+            get => _ammoPool;
+            set => _ammoPool = value;
+        }
     }
 }
