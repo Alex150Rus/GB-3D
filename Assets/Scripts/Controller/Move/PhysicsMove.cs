@@ -1,6 +1,7 @@
 using SpaceJailRunner.Controller.Interface;
 using SpaceJailRunner.Controller.UserInput.Interface;
 using SpaceJailRunner.Data;
+using SpaceJailRunner.Player;
 using SpaceJailRunner.UserInput.Interface;
 using UnityEngine;
 
@@ -13,12 +14,14 @@ namespace SpaceJailRunner.Controller.Move
         private float _verticalAxis;
         private float _horizontalAxis;
         private Vector3 _destination;
+        private SpaceJailRunner.Player.Player _player;
         
         public PhysicsMove(SpaceJailRunner.Player.Player player, PlayerData playerData, 
             (IUserInputProxy verticalInput, IUserInputProxy horizontalInput) input)
         {
             _rigidbody = player.GetComponent<Rigidbody>();
             _speed = playerData.Speed;
+            _player = player;
             input.verticalInput.OnAxisChange += SetHorizontalAxis;
            input.horizontalInput.OnAxisChange += SetVerticalAxis;
 
@@ -26,6 +29,15 @@ namespace SpaceJailRunner.Controller.Move
         public void Move()
         {
             _destination.Set(_horizontalAxis, 0f, _verticalAxis);
+            if (_destination.magnitude > 0)
+                _player.State = PlayerState.Run;
+            else
+            {
+                _rigidbody.velocity = Vector3.zero;
+                _player.State = PlayerState.Idle;
+            }
+               
+            
             _destination.Normalize();
             _rigidbody.AddForce(_destination * _speed);
         }

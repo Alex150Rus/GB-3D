@@ -10,6 +10,7 @@ namespace SpaceJailRunner.Controller.Jump
         private Rigidbody _rigidbody;
         private float _jumpForce;
         private float _jumpStartPosition;
+        private SpaceJailRunner.Player.Player _player;
         
         
         public JumpPhysics(SpaceJailRunner.Player.Player player, PlayerData playerData, IUserInputKeDownProxy jumpInput)
@@ -17,6 +18,7 @@ namespace SpaceJailRunner.Controller.Jump
             _rigidbody = player.GetComponent<Rigidbody>();
             _jumpForce = playerData.JumpForce;
             _jumpStartPosition = playerData.JumpStateStartsPos;
+            _player = player;
             jumpInput.OnBtnDown += Jump;
 
         }

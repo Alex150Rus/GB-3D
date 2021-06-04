@@ -315,19 +315,25 @@ CapsuleCollider:
   m_Height: 1.6500466
   m_Direction: 1
   m_Center: {x: 0, y: 0.81720746, z: 0.023410559}
---- !u!114 &3259911435036623920
-MonoBehaviour:
+--- !u!95 &7979884015495462251
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4642476870221435668}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0fc11d4a67c7b479fe1ded48bf7bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stepsSoundName: steps
+  m_Avatar: {fileID: 9000000, guid: eb062aa776e44954d94c4c2f76ebc148, type: 3}
+  m_Controller: {fileID: 9100000, guid: 39f64c28baaa462488a622ff6a6b9af3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4230770615719907456
 MonoBehaviour:
   m_ObjectHideFlags: 0
