@@ -10,5 +10,7 @@ namespace SpaceJailRunner.NameManager
 
         public const string ANIMATOR_SPEED = "speed";
         public const string ANIMATOR_FIRE = "fire";
+        public const string ANIMATOR_IDLE = "idle";
+        public const string ANIMATOR_ClOSE_ATTACK = "closeAttack";
     }
 }

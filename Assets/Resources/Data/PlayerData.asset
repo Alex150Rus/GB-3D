@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   _healthPoints: 100
-  _playerSpeed: 6
+  _playerSpeed: 10
   _rotateSpeed: 0.06
-  _moveSpeedMultiplyer: 2.49
+  _runSpeed: 2.49
   _jumpForce: 180
   _jumpStateStartsPos: 0.05
   _playerStartingState: 0

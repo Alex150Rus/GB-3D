@@ -81,6 +81,7 @@ namespace SpaceJailRunner.Controller
                 var playerJump = new PlayerJump(physicsJump, input.GetSpaceInput());
 
                 var playerAnimator = new PlayerAnimator(playerInit.GetPlayer(), _data.Player);
+                var enemyAnimator = new EnemyAnimator(enemyInit.GetListOfEnemies());
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
@@ -90,6 +91,7 @@ namespace SpaceJailRunner.Controller
                 _controller.Add(playerRotate);
                 _controller.Add(playerJump);
                 _controller.Add(playerAnimator);
+                _controller.Add(enemyAnimator);
             }
 
         }
