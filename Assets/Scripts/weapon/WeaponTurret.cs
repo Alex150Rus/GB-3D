@@ -1,7 +1,4 @@
-using System;
 using SpaceJailRunner.Ammos;
-using UnityEditor;
-using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 namespace SpaceJailRunner.weapon
