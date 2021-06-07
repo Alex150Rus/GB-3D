@@ -60,7 +60,7 @@ namespace SpaceJailRunner.Controller
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
                 var ammoAbstarctFactorty = new AmmoAbstractFactory();
-
+                
                 var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy, ammoAbstarctFactorty);
 
                 var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());

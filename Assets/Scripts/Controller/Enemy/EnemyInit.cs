@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SpaceJailRunner.Ammos;
+using SpaceJailRunner.Common;
 using SpaceJailRunner.Controller.Enemy.Interface;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
@@ -26,6 +27,13 @@ namespace SpaceJailRunner.Controller.Enemy
             _enemyData = enemyData;
             _ammoAbstarctFactorty = ammoAbstarctFactorty;
             _ammoPool = new AmmoPool(5, ammoAbstarctFactorty);
+
+            #region serviceLocator 
+
+            ServiceLocator.SetService(_ammoPool);
+
+            #endregion
+            
             
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Patrolling);
             SetListOfEnemies(enemyFactory, enemyStartPoints, EnemyType.Static);
@@ -41,8 +49,17 @@ namespace SpaceJailRunner.Controller.Enemy
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 enemy.Health.HealthPoints = _enemyData.HealthPoints;
                 enemy.Weapon = new WeaponTurret(_ammoAbstarctFactorty.CreateAmmo(AmmoType.TurretBall));
-                if (enemy.Weapon is WeaponTurret weaponTurret)
-                    weaponTurret.Ammo.AmmoPool = _ammoPool;
+                if (enemy.Weapon is WeaponTurret weaponTurret) {
+                    
+                    //weaponTurret.Ammo.AmmoPool = _ammoPool;
+
+                    #region gettingAmmoPoolViaServiceLocator
+
+                    weaponTurret.Ammo.AmmoPool = ServiceLocator.Resolve<AmmoPool>();
+
+                    #endregion
+                }
+                
                 AddEnemyToTheList(enemyType, enemy);
             }
         }
