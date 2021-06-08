@@ -11,6 +11,7 @@ using UnityEngine.AI;
 
 namespace SpaceJailRunner.Enemy
 {
+    [Serializable]
     internal class Enemy: MonoBehaviour, ICanSeeEnemy
     {
         private Health.Health _health;

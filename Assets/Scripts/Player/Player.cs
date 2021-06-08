@@ -1,8 +1,10 @@
+using System;
 using SpaceJailRunner.Player.Interface;
 using UnityEngine;
 
 namespace SpaceJailRunner.Player
 {
+    [Serializable]
     internal class Player: MonoBehaviour, IHaveHealth
     {
         private Health.Health _health;

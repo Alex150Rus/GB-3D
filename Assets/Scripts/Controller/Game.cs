@@ -82,6 +82,12 @@ namespace SpaceJailRunner.Controller
 
                 var playerAnimator = new PlayerAnimator(playerInit.GetPlayer(), _data.Player);
                 var enemyAnimator = new EnemyAnimator(enemyInit.GetListOfEnemies());
+
+                #region Prototype
+
+                new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
+
+                #endregion
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
