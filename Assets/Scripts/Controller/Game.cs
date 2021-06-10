@@ -85,7 +85,7 @@ namespace SpaceJailRunner.Controller
 
                 #region Prototype
 
-                new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
+                //new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
 
                 #endregion
                 
