@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.ComponentModel.Design.Serialization;
-using SpaceJailRunner.Ammos;
 using SpaceJailRunner.Enemy.Interface;
 using SpaceJailRunner.Player.Interface;
 using SpaceJailRunner.weapon;

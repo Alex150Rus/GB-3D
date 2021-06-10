@@ -1,7 +1,4 @@
-using System;
-using System.Security.Cryptography;
 using SpaceJailRunner.Enemy.Interface;
-using SpaceJailRunner.Player;
 using UnityEngine;
 
 namespace SpaceJailRunner.Enemy
