@@ -15,7 +15,7 @@ public class EnemyUIHealthController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(_camera);
-        _healthImage.fillAmount = (float)_health.CurrentHealth / 100;
+        // transform.LookAt(_camera);
+        // _healthImage.fillAmount = (float)_health.CurrentHealth / 100;
     }
 }

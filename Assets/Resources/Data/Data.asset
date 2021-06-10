@@ -15,3 +15,4 @@ MonoBehaviour:
   _playerDataPath: PlayerData
   _sceneNamesDataPath: SceneNames
   _cameraDataPath: CameraData
+  _enemyDataPath: EnemyData

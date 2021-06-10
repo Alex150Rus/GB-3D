@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 587736052237849567}
   - component: {fileID: 1287040621445226967}
   - component: {fileID: 906208758837735683}
-  - component: {fileID: 144746561790478815}
+  - component: {fileID: 7908003817515125182}
   m_Layer: 0
   m_Name: TurrelBall
   m_TagString: Untagged
@@ -58,6 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -82,6 +83,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &1287040621445226967
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -90,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2816502670651536717}
   m_Material: {fileID: 13400000, guid: 8d2f6ede9c7370f4689e7b5ee5281747, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -111,7 +113,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &144746561790478815
+--- !u!114 &7908003817515125182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +122,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2816502670651536717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d78de78247d076a4b930ed06b7471ada, type: 3}
+  m_Script: {fileID: 11500000, guid: 8224dcfd76524903bef70946807f549e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10

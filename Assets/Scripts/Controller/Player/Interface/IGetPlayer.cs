@@ -5,6 +5,6 @@ namespace SpaceJailRunner.Controller.Player.Interface
 {
     internal interface IGetPlayer
     {
-        public Transform GetPlayer();
+        public SpaceJailRunner.Player.Player GetPlayer();
     }
 }

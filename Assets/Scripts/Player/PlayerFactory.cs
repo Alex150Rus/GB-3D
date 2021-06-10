@@ -1,19 +1,19 @@
 using SpaceJailRunner.Player.Interface;
 using SpaceJailRunner.Prefabs_my;
-using SpaceJailRunner.Tags;
+using SpaceJailRunner.NameManager.Tags;
 using UnityEngine;
 
 namespace SpaceJailRunner.Player
 {
-    public class PlayerFactory : ICreatePlayer
+    internal class PlayerFactory : ICreatePlayer
     {
-        public Transform CreatePlayer()
+        public Player CreatePlayer()
         {
-            var prefab = Resources.Load<GameObject>($"{PrefabsRoutesManager.CHARS}Player");
+            var prefab = Resources.Load<Player>($"{PrefabsRoutesManager.CHARS}Player");
             var playerStartingPont = GameObject.
                 FindGameObjectWithTag(TagNamesManager.PLAYER_STARTING_POINT_TAG).transform.position;
             var instance = Object.Instantiate(prefab, playerStartingPont, Quaternion.identity);
-            return instance.transform;
+            return instance;
         }
     }
 }
