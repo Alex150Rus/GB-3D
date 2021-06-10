@@ -2,6 +2,7 @@ using System;
 
 namespace SpaceJailRunner.Health
 {
+    [Serializable]
     public sealed class Health: IHealth
     {
         private float _healthPoints;

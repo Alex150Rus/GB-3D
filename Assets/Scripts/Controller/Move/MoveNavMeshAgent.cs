@@ -1,5 +1,6 @@
 using System.Linq;
 using SpaceJailRunner.Controller.Interface;
+using SpaceJailRunner.Enemy;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,12 +9,14 @@ namespace SpaceJailRunner.Controller.Move
     internal sealed class MoveUsingNavMeshAgent: IMove 
     {
         private NavMeshAgent _navMeshAgent;
+        private SpaceJailRunner.Enemy.Enemy _enemy;
         private Transform[] _waypoints;
         private int _currentWaypointIndex = 0;
 
         public MoveUsingNavMeshAgent(SpaceJailRunner.Enemy.Enemy enemy)
         {
-            _navMeshAgent = enemy.GetComponent<NavMeshAgent>();
+            _navMeshAgent = enemy.NavMeshAgent;
+            _enemy = enemy;
             
             if (enemy.transform.parent.childCount > 1)
             {
@@ -26,6 +29,7 @@ namespace SpaceJailRunner.Controller.Move
 
         public void Move()
         {
+            _enemy.State = EnemyState.Run;
             if (_navMeshAgent.remainingDistance < _navMeshAgent.stoppingDistance && _waypoints != null)
             {
                 _currentWaypointIndex = (_currentWaypointIndex + 1) % _waypoints.Length;

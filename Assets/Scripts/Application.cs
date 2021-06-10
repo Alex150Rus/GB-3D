@@ -26,7 +26,7 @@ namespace SpaceJailRunner
         private void FixedUpdate()
         {
             var deltaTime = Time.fixedDeltaTime;
-            _controllers.Execute(deltaTime);
+            _controllers.FixedExecute(deltaTime);
         }
 
         private void LateUpdate()

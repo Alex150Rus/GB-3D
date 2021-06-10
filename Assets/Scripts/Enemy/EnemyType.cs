@@ -1,5 +1,8 @@
+using System;
+
 namespace SpaceJailRunner.Enemy
 {
+    [Serializable]
     internal enum EnemyType
     {
         None = 0,
