@@ -8,12 +8,17 @@ namespace SpaceJailRunner.Controller.Enemy
     {
         private List<IMove> _moveRealization;
 
-        public PatrollingEnemyMoveController(List<SpaceJailRunner.Enemy.Enemy> enemies)
+        public PatrollingEnemyMoveController(List<SpaceJailRunner.Enemy.Enemy> enemies, 
+            IProvideIMoveImplementation moveProxy)
         {
             _moveRealization = new List<IMove>();
             foreach (var enemy in enemies)
             {
-                _moveRealization.Add(new MoveUsingNavMeshAgent(enemy));
+                var item = moveProxy.GetMoveImplementation(MoveType.NaVMeshAgent);
+                _moveRealization.Add(item);
+                if (item is MoveUsingNavMeshAgent moveNavMeshAgent)
+                    moveNavMeshAgent.SetMovingUnit(enemy);
+                
             }
         }
         
