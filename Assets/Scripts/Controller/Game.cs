@@ -8,6 +8,7 @@ using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Controller.Rotate;
 using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Enemy;
+using SpaceJailRunner.JSON;
 using SpaceJailRunner.MainMenu;
 using SpaceJailRunner.Player;
 using UnityEngine;
@@ -89,6 +90,16 @@ namespace SpaceJailRunner.Controller
                 #region Prototype
 
                 //new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
+
+                #endregion
+
+                #region json
+
+                var abstractUnitFactory = new AbstractUnitFactory();
+                    abstractUnitFactory.Create(UnitType.Infantry);
+                    var mags = abstractUnitFactory.Create(UnitType.Mag);
+                    Debug.Log(mags.Count);
+                    
 
                 #endregion
                 
