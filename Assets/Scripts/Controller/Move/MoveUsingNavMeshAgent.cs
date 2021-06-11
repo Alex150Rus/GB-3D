@@ -13,7 +13,7 @@ namespace SpaceJailRunner.Controller.Move
         private Transform[] _waypoints;
         private int _currentWaypointIndex = 0;
 
-        public MoveUsingNavMeshAgent(SpaceJailRunner.Enemy.Enemy enemy)
+        public void SetMovingUnit(SpaceJailRunner.Enemy.Enemy enemy)
         {
             _navMeshAgent = enemy.NavMeshAgent;
             _enemy = enemy;

@@ -8,6 +8,7 @@ using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Controller.Rotate;
 using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Enemy;
+using SpaceJailRunner.JSON;
 using SpaceJailRunner.MainMenu;
 using SpaceJailRunner.Player;
 using UnityEngine;
@@ -63,7 +64,11 @@ namespace SpaceJailRunner.Controller
                 
                 var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy, ammoAbstarctFactorty);
 
-                var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
+
+                var moveProxy = new MoveProxy(playerInit.GetPlayer(), _data.Player, input.GetInput());
+                
+                var patrollingEnemyMoveController = 
+                    new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies(), moveProxy);
 
                 var detector = new DetectEnemy();
                 var playerDetector = new PlayerDetector(detector,playerInit.GetPlayer(),
@@ -71,8 +76,7 @@ namespace SpaceJailRunner.Controller
 
                 var enemyAttack = new EnemyAttack(enemyInit.GetListOfEnemies());
                 
-                var physicsMover = new PhysicsMove(playerInit.GetPlayer(),_data.Player, input.GetInput());
-                var playerMove = new PlayerMove(physicsMover, input.GetInput());
+                var playerMove = new PlayerMove(moveProxy.GetMoveImplementation(MoveType.Transform), input.GetInput());
 
                 var physicsRotate = new PhysicsRotate(playerInit.GetPlayer(),_data.Player, input.GetInput());
                 var playerRotate = new PlayerRotate(physicsRotate, input.GetInput());
@@ -86,6 +90,16 @@ namespace SpaceJailRunner.Controller
                 #region Prototype
 
                 //new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
+
+                #endregion
+
+                #region json
+
+                var abstractUnitFactory = new AbstractUnitFactory();
+                    abstractUnitFactory.Create(UnitType.Infantry);
+                    var mags = abstractUnitFactory.Create(UnitType.Mag);
+                    Debug.Log(mags.Count);
+                    
 
                 #endregion
                 
