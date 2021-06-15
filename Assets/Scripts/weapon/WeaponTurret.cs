@@ -5,6 +5,14 @@ namespace SpaceJailRunner.weapon
 {
     internal sealed class WeaponTurret: WeaponWithAmmo
     {
+        private WeaponType _type = WeaponType.Turret;
+
+        public WeaponType Type
+        {
+            get => _type;
+            set => _type = value;
+        }
+        
         public Ammo Ammo
         {
             get => _ammo;

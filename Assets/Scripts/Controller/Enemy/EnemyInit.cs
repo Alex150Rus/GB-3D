@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using SpaceJailRunner.Aim;
 using SpaceJailRunner.Ammos;
 using SpaceJailRunner.Common;
 using SpaceJailRunner.Controller.Enemy.Interface;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
 using SpaceJailRunner.weapon;
+using SpaceJailRunner.weapon.Modifications;
 using UnityEngine;
 
 namespace SpaceJailRunner.Controller.Enemy
@@ -49,6 +51,8 @@ namespace SpaceJailRunner.Controller.Enemy
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 enemy.Health.HealthPoints = _enemyData.HealthPoints;
                 enemy.Weapon = new WeaponTurret(_ammoAbstarctFactorty.CreateAmmo(AmmoType.TurretBall));
+                
+                
                 if (enemy.Weapon is WeaponTurret weaponTurret) {
                     
                     //weaponTurret.Ammo.AmmoPool = _ammoPool;
@@ -56,6 +60,16 @@ namespace SpaceJailRunner.Controller.Enemy
                     #region gettingAmmoPoolViaServiceLocator
 
                     weaponTurret.Ammo.AmmoPool = ServiceLocator.Resolve<AmmoPool>();
+
+                    #endregion
+
+                    //Debug.Log(weaponTurret.Type);
+                    #region WeaponModification
+
+                    var aim = new Aim.Aim(AimType.CubeType);
+                    ModificationAim weaponModification = new ModificationAim(aim);
+                    weaponModification.ApplyModification(weaponTurret);
+                    //Debug.Log(weaponTurret.Type);
 
                     #endregion
                 }
