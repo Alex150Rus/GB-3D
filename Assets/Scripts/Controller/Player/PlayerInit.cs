@@ -13,6 +13,21 @@ namespace SpaceJailRunner.Controller.Player
         {
             _player = playerFactory.CreatePlayer();
             _player.Health.HealthPoints = playerData.HealthPoints;
+
+            #region ChainOfResponsibilities
+            
+            Debug.Log(_player.Health.HealthPoints);
+            Debug.Log(_player.State);
+
+            var root = new PlayerModifier(_player);
+            root.Add(new StateModifier(_player, PlayerState.Run));
+            root.Add(new HealthModifier(_player, 500));
+            root.Handle();
+            
+            Debug.Log(_player.Health.HealthPoints);
+            Debug.Log(_player.State);
+
+            #endregion
         }
 
         public SpaceJailRunner.Player.Player GetPlayer()
