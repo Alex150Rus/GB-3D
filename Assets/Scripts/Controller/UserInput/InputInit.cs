@@ -12,6 +12,8 @@ namespace SpaceJailRunner.Controller.UserInput
         private IUserInputProxy _pcInputVertical;
         private IUserInputKeDownProxy _pcInputSpace;
         private IUserInputKeDownProxy _pcInputFire;
+        private IUserInputKeDownProxyKeyCode  _pcKey1;
+        private IUserInputKeDownProxyKeyCode  _pcKey2;
 
         public InputInit()
         {
@@ -22,6 +24,9 @@ namespace SpaceJailRunner.Controller.UserInput
             _pcInputVertical = new PCInputVertical();
             _pcInputSpace = new PCInputSpace();
             _pcInputFire = new PCInputFire();
+            _pcKey1 = new PCInput1();
+            _pcKey2 = new PCInput2();
+
         }
 
 
@@ -40,6 +45,12 @@ namespace SpaceJailRunner.Controller.UserInput
         public IUserInputKeDownProxy GetSpaceInput()
         {
             return _pcInputSpace;
+        }
+        
+        public (IUserInputKeDownProxyKeyCode  key1, IUserInputKeDownProxyKeyCode  key2) GetNumbersInput()
+        {
+            (IUserInputKeDownProxyKeyCode  _key1, IUserInputKeDownProxyKeyCode  _key2) result = (_pcKey1, _pcKey2);
+            return result;
         }
     }
 }

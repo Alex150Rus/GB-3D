@@ -1,6 +1,7 @@
 using SpaceJailRunner.Ammos;
 using SpaceJailRunner.Controller.Cameras;
 using SpaceJailRunner.Controller.Enemy;
+using SpaceJailRunner.Controller.HUD;
 using SpaceJailRunner.Controller.Jump;
 using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Move;
@@ -88,6 +89,8 @@ namespace SpaceJailRunner.Controller
                 //new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
 
                 #endregion
+
+                _controller.Add(new Panels(input.GetNumbersInput()));
                 
                 _controller.Add(playerFollowingCamera);
                 _controller.Add(patrollingEnemyMoveController);
