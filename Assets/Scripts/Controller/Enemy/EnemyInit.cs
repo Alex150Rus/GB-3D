@@ -68,7 +68,15 @@ namespace SpaceJailRunner.Controller.Enemy
 
                     var aim = new Aim.Aim(AimType.CubeType);
                     ModificationAim weaponModification = new ModificationAim(aim);
-                    weaponModification.ApplyModification(weaponTurret);
+
+                    #region WeaponProxy
+
+                    var unlockWeapon = new UnlockWeapon(true);
+                    var weaponProxy = new WeaponProxy(weaponTurret, unlockWeapon);
+                    enemy.Weapon = weaponProxy;
+                    #endregion
+                    
+                    weaponModification.ApplyModification(weaponProxy);
                     //Debug.Log(weaponTurret.Type);
 
                     #endregion
