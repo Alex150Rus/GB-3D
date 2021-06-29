@@ -7,6 +7,7 @@ using SpaceJailRunner.Controller.MainMenu;
 using SpaceJailRunner.Controller.Move;
 using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Controller.Rotate;
+using SpaceJailRunner.Controller.Score;
 using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Enemy;
 using SpaceJailRunner.MainMenu;
@@ -89,6 +90,10 @@ namespace SpaceJailRunner.Controller
                 //new EnemyResurrector(enemyInit.GetPatrollingEnemies()[0]).ResurrectEnemy(Vector3.forward);
 
                 #endregion
+
+                var score = new SpaceJailRunner.Score.Score();
+                new ScoreController(score);
+                score.ScorePoints = 4600;
 
                 _controller.Add(new Panels(input.GetNumbersInput()));
                 
