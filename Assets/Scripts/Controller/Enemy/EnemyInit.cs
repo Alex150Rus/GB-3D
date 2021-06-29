@@ -6,6 +6,7 @@ using SpaceJailRunner.Common;
 using SpaceJailRunner.Controller.Enemy.Interface;
 using SpaceJailRunner.Data;
 using SpaceJailRunner.Enemy;
+using SpaceJailRunner.Health;
 using SpaceJailRunner.weapon;
 using UnityEngine;
 
@@ -48,8 +49,13 @@ namespace SpaceJailRunner.Controller.Enemy
             {
                 var enemy = enemyFactory.Create(enemyType, enemyStartPointsArray[i].transform);
                 enemy.Health.HealthPoints = _enemyData.HealthPoints;
+                
+                enemy.Health.HealthBelongs = HealthBelongs.Enemy;
+                enemy.Health.HealthPoints = 0;
+                
                 enemy.Weapon = new WeaponTurret(_ammoAbstarctFactorty.CreateAmmo(AmmoType.TurretBall));
-                if (enemy.Weapon is WeaponTurret weaponTurret) {
+                if (enemy.Weapon is WeaponTurret weaponTurret)
+                {
                     
                     //weaponTurret.Ammo.AmmoPool = _ammoPool;
 
