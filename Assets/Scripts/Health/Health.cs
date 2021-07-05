@@ -3,10 +3,12 @@ using System;
 namespace SpaceJailRunner.Health
 {
     [Serializable]
-    public sealed class Health: IHealth
+    public class Health: IHealth
     {
         private float _healthPoints;
         public event Action<float> OnHealthChanged;
+        public event Action OnDeath;
+
         public float HealthPoints
         {
             get => _healthPoints;
@@ -14,6 +16,8 @@ namespace SpaceJailRunner.Health
             {
                 _healthPoints = value;
                 OnHealthChanged?.Invoke(_healthPoints - value);
+                if(_healthPoints <= 0)
+                    OnDeath?.Invoke();
             }
         }
         public void TakeDamage(float damage)

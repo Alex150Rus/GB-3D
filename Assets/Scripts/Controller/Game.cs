@@ -8,6 +8,7 @@ using SpaceJailRunner.Controller.Player;
 using SpaceJailRunner.Controller.Rotate;
 using SpaceJailRunner.Controller.UserInput;
 using SpaceJailRunner.Enemy;
+using SpaceJailRunner.Listeners;
 using SpaceJailRunner.MainMenu;
 using SpaceJailRunner.Player;
 using UnityEngine;
@@ -60,8 +61,10 @@ namespace SpaceJailRunner.Controller
                 var abstractEnemyFactory = new AbstractEnemyFactory();
                 var enemyStartPoints = new EnemyStartPoints();
                 var ammoAbstarctFactorty = new AmmoAbstractFactory();
+                var deadEnemiesListener = new DeadEnemiesListener();
                 
-                var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy, ammoAbstarctFactorty);
+                var enemyInit = new EnemyInit(abstractEnemyFactory, enemyStartPoints, _data.Enemy, ammoAbstarctFactorty,
+                    deadEnemiesListener);
 
                 var patrollingEnemyMoveController = new PatrollingEnemyMoveController(enemyInit.GetPatrollingEnemies());
 
