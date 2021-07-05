@@ -30,11 +30,11 @@ namespace SpaceJailRunner.Controller.Move
         {
             _destination.Set(_horizontalAxis, 0f, _verticalAxis);
             if (_destination.magnitude > 0)
-                _player.State = PlayerState.Run;
+                _player.MovementSM.ChangeState(_player.RunningState);
             else
             {
                 _rigidbody.velocity = Vector3.zero;
-                _player.State = PlayerState.Idle;
+                _player.MovementSM.ChangeState(_player.IdleState);
             }
                
             

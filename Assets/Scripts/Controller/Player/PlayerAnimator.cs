@@ -25,21 +25,21 @@ namespace SpaceJailRunner.Controller.Player
 
         public void Execute(float deltaTime)
         {
-            switch (_player.State)
-            {
-                case PlayerState.Idle:
-                case PlayerState.Jump:
-                    _animator.SetFloat(_speed, 0f);
-                    break;
-                case PlayerState.Run:
-                    _animator.SetFloat(_speed, _runSpeed);
-                    break;
-                case PlayerState.Firing:
-                    _animator.SetTrigger(_fire);
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+            // switch (_player.State)
+            // {
+            //     case PlayerState.Idle:
+            //     case PlayerState.Jump:
+            //         _animator.SetFloat(_speed, 0f);
+            //         break;
+            //     case PlayerState.Run:
+            //         _animator.SetFloat(_speed, _runSpeed);
+            //         break;
+            //     case PlayerState.Firing:
+            //         _animator.SetTrigger(_fire);
+            //         break;
+            //     default:
+            //         throw new ArgumentOutOfRangeException();
+            // }
         }
     }
 }
